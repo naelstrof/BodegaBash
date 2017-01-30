@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 0ade737532b851a4baa0481a90511286
+timeCreated: 1485809361
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bip_collar_L
+    100002: bip_collar_R
+    100004: bip_eye_L
+    100006: bip_eye_R
+    100008: bip_foot_L
+    100010: bip_foot_R
+    100012: bip_hand_L
+    100014: bip_hand_R
+    100016: bip_head
+    100018: bip_hip_L
+    100020: bip_hip_R
+    100022: bip_index_0_L
+    100024: bip_index_0_R
+    100026: bip_index_1_L
+    100028: bip_index_1_R
+    100030: bip_index_2_L
+    100032: bip_index_2_R
+    100034: bip_jaw
+    100036: bip_knee_L
+    100038: bip_knee_R
+    100040: bip_lowerArm_L
+    100042: bip_lowerArm_R
+    100044: bip_middle_0_L
+    100046: bip_middle_0_R
+    100048: bip_middle_1_L
+    100050: bip_middle_1_R
+    100052: bip_middle_2_L
+    100054: bip_middle_2_R
+    100056: bip_neck
+    100058: bip_pelvis
+    100060: bip_pinky_0_L
+    100062: bip_pinky_0_R
+    100064: bip_pinky_1_L
+    100066: bip_pinky_1_R
+    100068: bip_pinky_2_L
+    100070: bip_pinky_2_R
+    100072: bip_ring_0_L
+    100074: bip_ring_0_R
+    100076: bip_ring_1_L
+    100078: bip_ring_1_R
+    100080: bip_ring_2_L
+    100082: bip_ring_2_R
+    100084: bip_spine_0
+    100086: bip_spine_1
+    100088: bip_spine_2
+    100090: bip_spine_3
+    100092: bip_thumb_0_L
+    100094: bip_thumb_0_R
+    100096: bip_thumb_1_L
+    100098: bip_thumb_1_R
+    100100: bip_thumb_2_L
+    100102: bip_thumb_2_R
+    100104: bip_toe2_0_L
+    100106: bip_toe2_0_R
+    100108: bip_toe_L
+    100110: bip_toe_R
+    100112: bip_upperArm_L
+    100114: bip_upperArm_R
+    100116: //RootNode
+    100118: generichar_GEO
+    100120: temphead_GEO
+    400000: bip_collar_L
+    400002: bip_collar_R
+    400004: bip_eye_L
+    400006: bip_eye_R
+    400008: bip_foot_L
+    400010: bip_foot_R
+    400012: bip_hand_L
+    400014: bip_hand_R
+    400016: bip_head
+    400018: bip_hip_L
+    400020: bip_hip_R
+    400022: bip_index_0_L
+    400024: bip_index_0_R
+    400026: bip_index_1_L
+    400028: bip_index_1_R
+    400030: bip_index_2_L
+    400032: bip_index_2_R
+    400034: bip_jaw
+    400036: bip_knee_L
+    400038: bip_knee_R
+    400040: bip_lowerArm_L
+    400042: bip_lowerArm_R
+    400044: bip_middle_0_L
+    400046: bip_middle_0_R
+    400048: bip_middle_1_L
+    400050: bip_middle_1_R
+    400052: bip_middle_2_L
+    400054: bip_middle_2_R
+    400056: bip_neck
+    400058: bip_pelvis
+    400060: bip_pinky_0_L
+    400062: bip_pinky_0_R
+    400064: bip_pinky_1_L
+    400066: bip_pinky_1_R
+    400068: bip_pinky_2_L
+    400070: bip_pinky_2_R
+    400072: bip_ring_0_L
+    400074: bip_ring_0_R
+    400076: bip_ring_1_L
+    400078: bip_ring_1_R
+    400080: bip_ring_2_L
+    400082: bip_ring_2_R
+    400084: bip_spine_0
+    400086: bip_spine_1
+    400088: bip_spine_2
+    400090: bip_spine_3
+    400092: bip_thumb_0_L
+    400094: bip_thumb_0_R
+    400096: bip_thumb_1_L
+    400098: bip_thumb_1_R
+    400100: bip_thumb_2_L
+    400102: bip_thumb_2_R
+    400104: bip_toe2_0_L
+    400106: bip_toe2_0_R
+    400108: bip_toe_L
+    400110: bip_toe_R
+    400112: bip_upperArm_L
+    400114: bip_upperArm_R
+    400116: //RootNode
+    400118: generichar_GEO
+    400120: temphead_GEO
+    4300000: generichar_GEO
+    4300002: temphead_GEO
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: generichar_GEO
+    13700002: temphead_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bip_pelvis
+        weight: 1
+      - path: bip_pelvis/bip_hip_L
+        weight: 1
+      - path: bip_pelvis/bip_hip_L/bip_knee_L
+        weight: 1
+      - path: bip_pelvis/bip_hip_L/bip_knee_L/bip_foot_L
+        weight: 1
+      - path: bip_pelvis/bip_hip_L/bip_knee_L/bip_foot_L/bip_toe_L
+        weight: 1
+      - path: bip_pelvis/bip_hip_L/bip_knee_L/bip_foot_L/bip_toe_L/bip_toe2_0_L
+        weight: 1
+      - path: bip_pelvis/bip_hip_R
+        weight: 1
+      - path: bip_pelvis/bip_hip_R/bip_knee_R
+        weight: 1
+      - path: bip_pelvis/bip_hip_R/bip_knee_R/bip_foot_R
+        weight: 1
+      - path: bip_pelvis/bip_hip_R/bip_knee_R/bip_foot_R/bip_toe_R
+        weight: 1
+      - path: bip_pelvis/bip_hip_R/bip_knee_R/bip_foot_R/bip_toe_R/bip_toe2_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_index_0_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_index_0_L/bip_index_1_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_index_0_L/bip_index_1_L/bip_index_2_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_middle_0_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_middle_0_L/bip_middle_1_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_middle_0_L/bip_middle_1_L/bip_middle_2_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_pinky_0_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_pinky_0_L/bip_pinky_1_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_pinky_0_L/bip_pinky_1_L/bip_pinky_2_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_ring_0_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_ring_0_L/bip_ring_1_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_ring_0_L/bip_ring_1_L/bip_ring_2_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_thumb_0_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_thumb_0_L/bip_thumb_1_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_L/bip_upperArm_L/bip_lowerArm_L/bip_hand_L/bip_thumb_0_L/bip_thumb_1_L/bip_thumb_2_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_index_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_index_0_R/bip_index_1_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_index_0_R/bip_index_1_R/bip_index_2_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_middle_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_middle_0_R/bip_middle_1_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_middle_0_R/bip_middle_1_R/bip_middle_2_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_pinky_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_pinky_0_R/bip_pinky_1_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_pinky_0_R/bip_pinky_1_R/bip_pinky_2_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_ring_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_ring_0_R/bip_ring_1_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_ring_0_R/bip_ring_1_R/bip_ring_2_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_thumb_0_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_thumb_0_R/bip_thumb_1_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_collar_R/bip_upperArm_R/bip_lowerArm_R/bip_hand_R/bip_thumb_0_R/bip_thumb_1_R/bip_thumb_2_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_neck
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_neck/bip_head
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_neck/bip_head/bip_eye_L
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_neck/bip_head/bip_eye_R
+        weight: 1
+      - path: bip_pelvis/bip_spine_0/bip_spine_1/bip_spine_2/bip_spine_3/bip_neck/bip_head/bip_jaw
+        weight: 1
+      - path: generichar_GEO
+        weight: 1
+      - path: temphead_GEO
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
