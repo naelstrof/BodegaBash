@@ -1,5 +1,25 @@
 # Bodega Bash Design Document
 
+
+##Game State Flow Map
+
+##Level Maps/Level Design (Which disasters?)
+	###Level Obstacles
+##Game Look
+	###Style
+	###Characters
+	###Audio
+
+##Rules of the Game
+	###Score System
+
+##Mini-Games
+
+
+
+
+
+
 ## Mechanics
 
 ![mechanics are hard](https://i.ytimg.com/vi/a8rpifNUEYo/hqdefault.jpg)
