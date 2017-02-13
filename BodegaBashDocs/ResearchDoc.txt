@@ -1,11 +1,11 @@
 Research everything you can about your chosen game subject.  Be prepared to present your findings in class.  Use the IDEO videos for inspiration (links are in the syllabus).
 Research should include the following:
-•	Everyday users – people get info from (emergency essentials), people who have experienced natural disasters (Dalton) 
-•	Thorough online study
-•	Social Scientists/Anthropology – anyone familiar with product, culture community, people who have studied natural disasters  (Marina)
-•	Educating yourself on everything you can about your subject
-•	Problems with current/similar products or information
-•	Solutions
+â€¢	Everyday users â€“ people get info from (emergency essentials), people who have experienced natural disasters (Dalton) 
+â€¢	Thorough online study
+â€¢	Social Scientists/Anthropology â€“ anyone familiar with product, culture community, people who have studied natural disasters  (Marina)
+â€¢	Educating yourself on everything you can about your subject
+â€¢	Problems with current/similar products or information
+â€¢	Solutions
 
 How Prepared are People really?
 
@@ -41,7 +41,7 @@ If a major earthquake or landslide happens close to shore, a tsunami's first wav
 	Earthquake- 
 One of mother natures deadliest disasters. Roughtly 400,000 people have died from earthquakes in the past decade alone (https://www.statista.com/statistics/263108/global-death-toll-due-to-earthquakes-since-2000/). One reason Earthquakes are deadly is because currently, they cannot be predicted when they will happen.
 		Prepare: Identify locations where you can hide and shield your head and neck. Stay away from objects that can fall or 				cause damage. Store essential equipment. Have an emergency plan i.e. how to communicate with your family? Where you will 			meet up? Make sure your residence is up to code.
-		During: Stay where you are until shaking stops. Drop down so you don't fall over. Stay away from windows or objects that 			can fall. If you are outside try and stay away from buildings, trees, etc. If in a city try and find cover in a building.
+		During: Stay where you are until shaking stops. Drop down so you don't fall over. Stay away from windows or objects that 			can fall. If you are indoors, hide underneath a sturdy table. Do NOT hide under a door frame; that is outdated advice and doesn't work in modern buildings. If you are outside try and stay away from buildings, trees, etc. If in a city try and find cover in a building.
 		After: Once shaking stops, if there is a clearing and safe path go there. Be prepared for more shaking due to aftershocks.
 		Try and get in contact with people, and locate to a designated safe area.
 		(https://www.ready.gov/earthquakes)
@@ -50,7 +50,10 @@ One of mother natures deadliest disasters. Roughtly 400,000 people have died fro
 		For additional specific instructions and supplies visit: http://www.geo.mtu.edu/UPSeis/bda.html
 		
 	Tornado-
-
+		Prepare: Watch for changing weather conditions. Warning signs of a tornado are large hail, dark and/or greenish sky,
+			 and loud noises. If you see these danger signs, take shelter immediately.
+		During: Do NOT stay in a mobile home during a tornado. Mobile homes can be overturned by the strong winds, even if they 		are tied down. Find a building (preferably with a basement) or any sort of trench or ravine and shield your head with 			your hands.
+		After: Stay out of damanged buildings and watch out for debris such as downed power lines.
 	Etc. (List any other disaster along with research about it)-
 
 What can we do to prepare?
