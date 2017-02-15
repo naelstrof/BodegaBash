@@ -1,9 +1,9 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodegaBash", "Assembly-CSharp-firstpass.csproj", "{D2532CA7-9FFB-8EC2-542C-5FC355476FCC}"
+# Visual Studio 2008
+
+Project("{988863E6-213A-0EF6-52E1-4FAF73A2A4FE}") = "BodegaBash", "Assembly-CSharp-firstpass.csproj", "{D2532CA7-9FFB-8EC2-542C-5FC355476FCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodegaBash", "Assembly-CSharp-Editor-firstpass.csproj", "{B2DABB7D-0C5B-8297-B96E-56F3C953BEA5}"
+Project("{988863E6-213A-0EF6-52E1-4FAF73A2A4FE}") = "BodegaBash", "Assembly-CSharp-Editor-firstpass.csproj", "{B2DABB7D-0C5B-8297-B96E-56F3C953BEA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
