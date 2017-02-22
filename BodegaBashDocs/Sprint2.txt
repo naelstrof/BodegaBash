@@ -1,0 +1,80 @@
+Sprint 2 Doc
+
+**First Playable:**
+
+-
+  -
+    - Bullet Points for what we need to get done in each category
+- **Visual Target**
+  - A Visual Target is what the game is going to look like in finished form. That does not mean I am looking for finished graphics in the First Playable, it means that you are working towards a representation of the finished graphics. This can be represented in the form of concept art.
+- **Have core functionality**
+  - These are the moves that the character(s) perform in the game. If you have power ups then they need to work. If you have a vehicle in the game it needs to perform similarly as it would in the finished game.
+    - Movement of car is smooth and adds to playability
+    - Drifting, bounce turning, jumping
+    - Grabbing items
+    - Power ups
+    - Split screen
+    - Menu/Character Selection
+- **Have a simple functioning User Interface (front end and HUD)**
+  - The front end with splash screen with a logo (placeholder okay) and a &#39;Start Game&#39; button.
+    - Home screen
+  - The Heads Up Display should have something working in it that helps support the game play.
+    - Mini player map on screen during gameplay
+  - After the game is done a splash screen should appear with a &#39;Quit&#39; button and a &#39;Play Again&#39; button.
+    - End screen
+- **1 Environment**
+  - Starting to look like more like a finished model
+  - Some placeholder textures okay
+    - Three levels complete without textures complete
+    - Environment concept and models created
+- **Characters**
+  - Character should start to look like they will in finished form.
+  - Placeholder textures okay
+    - Finish characters and cart for main models
+
+Designers(Group) – Mini-Game design, Level maps
+
+Artists(Jake, James, Brandon) – Art concept, Characters, Menu Concept, Music/Sounds
+
+Programmers(Dalton, Isaac, Marina) – Core functionality
+
+Week1: (Feb. 21 – 26
+
+# th
+)
+- Levels Blocked out on paper
+- Mini-games concept designed
+- Block out needed items for specific disasters
+- Character/Main models
+- Modeling Assets
+- Cart moving functionality
+- Drifting, Jumping, Turning
+
+Week2: (Feb. 27 – Mar. 5
+
+# th
+)
+- Level Designed
+- Sounds recorded/Music complete
+- Finish Model assets
+- Animation for Character
+- Art concept (Passed from designers to get environment finished)
+- Grabbing items
+- Split Screen
+
+Week3: (Mar. 6 – 12
+
+# th
+)
+- Menu Concept
+- Get models and assets into game
+- Power ups
+
+Week4 (Spring Break – Mar. 13
+
+# th
+ – 19
+# th
+):
+- Polish and finish first playable
+- Finish what isn&#39;t done listed above
