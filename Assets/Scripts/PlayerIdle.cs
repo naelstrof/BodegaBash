@@ -11,6 +11,9 @@ public class PlayerIdle : PlayerState {
 
     public override void Update (PlayerController player)
     {
+		if (Input.GetAxis("Run") != 0) {
+			player.SwitchState (new PlayerRun());
+		}
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
         if (vert + horz != 0)
