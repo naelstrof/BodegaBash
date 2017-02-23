@@ -12,13 +12,19 @@ public class PlayerRun : PlayerState
 
 	public override void Update(PlayerController player)
 	{
+		if (!player.onGround) {
+			player.SwitchState (new PlayerAirborne ());
+		}
+		if (Input.GetButton ("Jump") && player.onGround) {
+			player.SwitchState (new PlayerJumpSquat ());
+		}
 		if (Input.GetAxis("Run") == 0) {
 			player.SwitchState (new PlayerIdle());
 		}
 		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"), 0, player.topSpeed);
 		float vert = Input.GetAxis("Vertical");
 		float horz = Input.GetAxis("Horizontal");
-		player.body.transform.Rotate (new Vector3 (0, -horz*player.turningSpeed, 0));
+		player.body.transform.Rotate (new Vector3 (0, horz*player.turningSpeed, 0));
 		Vector3 old = player.body.velocity;
 		if (player.onGround) {
 			player.body.velocity = player.body.transform.forward * player.speed + new Vector3 (0, old.y, 0);
