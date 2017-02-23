@@ -3,14 +3,17 @@ using System.Collections;
 
 public class PlayerJumpSquat : PlayerState {
 	private float time = 0;
+	private Vector3 direction;
 	public override void Start(PlayerController player)
 	{
 	}
 
 	public override void Update(PlayerController player)
 	{
+		float horz = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical");
+		direction = new Vector3 (horz, 1, vert);
 		time += Time.deltaTime;
-		Debug.Log (time);
 		if (time > player.jumpSquatTime) {
 			player.SwitchState (new PlayerAirborne ());
 		}
@@ -21,11 +24,15 @@ public class PlayerJumpSquat : PlayerState {
 
 	public override void End(PlayerController player)
 	{
+		Vector3 jumpdir = new Vector3 (1, player.fullJumpImpulse, 1);
+		direction *= player.jumpInfluence;
+		direction.y = 1;
+		jumpdir.Scale (direction);
 		Vector3 old = player.body.velocity;
 		if (time > player.jumpSquatTime) {
-			player.body.velocity = old + new Vector3 (0, player.fullJumpImpulse, 0);
+			player.body.velocity = old + jumpdir;
 		} else {
-			player.body.velocity = old + new Vector3 (0, player.shortJumpImpulse, 0);
+			player.body.velocity = old + jumpdir;
 		}
 	}
 }

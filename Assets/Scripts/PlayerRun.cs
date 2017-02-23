@@ -22,7 +22,7 @@ public class PlayerRun : PlayerState
 			player.SwitchState (new PlayerIdle());
 		}
 		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"), 0, player.topSpeed);
-		float vert = Input.GetAxis("Vertical");
+		//float vert = Input.GetAxis("Vertical");
 		float horz = Input.GetAxis("Horizontal");
 		player.body.transform.Rotate (new Vector3 (0, horz*player.turningSpeed, 0));
 		Vector3 old = player.body.velocity;

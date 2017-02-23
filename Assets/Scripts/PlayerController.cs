@@ -9,10 +9,11 @@ public class PlayerController : MonoBehaviour {
 	public float walkingSpeed;
 	public float turningSpeed;
 	public float accel;
-	public float fullJumpImpulse = 100;
-	public float shortJumpImpulse = 10;
+	public float jumpInfluence;
+	public float fullJumpImpulse = 16;
+	public float shortJumpImpulse = 8;
 	public float jumpSquatTime = 5f / 60f;
-	public float airControl;
+	public float airControl = 2;
 	public Vector3 hitNormal{ get; set; }
 
     private PlayerState currentState;
@@ -36,6 +37,9 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			hitNormal = new Vector3 (0, 1, 0);
 			onGround = false;
+		}
+		if (!onGround && body.velocity.y == 0) {
+			onGround = true;
 		}
 
         if (newState != null)

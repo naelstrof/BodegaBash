@@ -46,8 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Pickup.cs" />
+     <Compile Include="Assets\Scripts\PlayerAirborne.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerIdle.cs" />
+     <Compile Include="Assets\Scripts\PlayerJumpSquat.cs" />
      <Compile Include="Assets\Scripts\PlayerRun.cs" />
      <Compile Include="Assets\Scripts\PlayerState.cs" />
      <Compile Include="Assets\Scripts\PlayerWalk.cs" />
