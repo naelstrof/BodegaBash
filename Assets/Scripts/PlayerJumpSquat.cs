@@ -24,14 +24,18 @@ public class PlayerJumpSquat : PlayerState {
 
 	public override void End(PlayerController player)
 	{
-		Vector3 jumpdir = new Vector3 (1, player.fullJumpImpulse, 1);
-		direction *= player.jumpInfluence;
-		direction.y = 1;
-		jumpdir.Scale (direction);
 		Vector3 old = player.body.velocity;
 		if (time > player.jumpSquatTime) {
+			Vector3 jumpdir = new Vector3 (1, player.fullJumpImpulse, 1);
+			direction *= player.jumpInfluence;
+			direction.y = 1;
+			jumpdir.Scale (direction);
 			player.body.velocity = old + jumpdir;
 		} else {
+			Vector3 jumpdir = new Vector3 (1, player.shortJumpImpulse, 1);
+			direction *= player.jumpInfluence;
+			direction.y = 1;
+			jumpdir.Scale (direction);
 			player.body.velocity = old + jumpdir;
 		}
 	}
