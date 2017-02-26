@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 65cca8103d4504a4bbefb7ac9aa1df8d
+timeCreated: 1488059974
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body_GEO
+    100002: hair_GEO
+    100004: head_result_JNT
+    100006: jaw_result_JNT
+    100008: left_ball_result_JNT
+    100010: left_clavicle_result_JNT
+    100012: left_eye_result_JNT
+    100014: left_foot_result_JNT
+    100016: left_forearm_result_JNT
+    100018: left_forearmTwist_result_JNT
+    100020: left_hand_result_JNT
+    100022: left_shin_result_JNT
+    100024: left_thigh_result_JNT
+    100026: left_thumb1_result_JNT
+    100028: left_thumb2_result_JNT
+    100030: left_thumb3_result_JNT
+    100032: left_upperArm_result_JNT
+    100034: left_upperArmTwist_result_JNT
+    100036: //RootNode
+    100038: neck_result_JNT
+    100040: pelvis_result_JNT
+    100042: right_ball_result_JNT
+    100044: right_clavicle_result_JNT
+    100046: right_eye_result_JNT
+    100048: right_foot_result_JNT
+    100050: right_forearm_result_JNT
+    100052: right_forearmTwist_result_JNT
+    100054: right_hand_result_JNT
+    100056: right_shin_result_JNT
+    100058: right_thigh_result_JNT
+    100060: right_thumb1_result_JNT
+    100062: right_thumb2_result_JNT
+    100064: right_thumb3_result_JNT
+    100066: right_upperArm_result_JNT
+    100068: right_upperArmTwist_result_JNT
+    100070: spine1_result_JNT
+    100072: spine2_result_JNT
+    100074: spine3_result_JNT
+    100076: spine4_result_JNT
+    100078: spine5_result_JNT
+    100080: player_body_GEO
+    100082: player_hair_GEO
+    400000: body_GEO
+    400002: hair_GEO
+    400004: head_result_JNT
+    400006: jaw_result_JNT
+    400008: left_ball_result_JNT
+    400010: left_clavicle_result_JNT
+    400012: left_eye_result_JNT
+    400014: left_foot_result_JNT
+    400016: left_forearm_result_JNT
+    400018: left_forearmTwist_result_JNT
+    400020: left_hand_result_JNT
+    400022: left_shin_result_JNT
+    400024: left_thigh_result_JNT
+    400026: left_thumb1_result_JNT
+    400028: left_thumb2_result_JNT
+    400030: left_thumb3_result_JNT
+    400032: left_upperArm_result_JNT
+    400034: left_upperArmTwist_result_JNT
+    400036: //RootNode
+    400038: neck_result_JNT
+    400040: pelvis_result_JNT
+    400042: right_ball_result_JNT
+    400044: right_clavicle_result_JNT
+    400046: right_eye_result_JNT
+    400048: right_foot_result_JNT
+    400050: right_forearm_result_JNT
+    400052: right_forearmTwist_result_JNT
+    400054: right_hand_result_JNT
+    400056: right_shin_result_JNT
+    400058: right_thigh_result_JNT
+    400060: right_thumb1_result_JNT
+    400062: right_thumb2_result_JNT
+    400064: right_thumb3_result_JNT
+    400066: right_upperArm_result_JNT
+    400068: right_upperArmTwist_result_JNT
+    400070: spine1_result_JNT
+    400072: spine2_result_JNT
+    400074: spine3_result_JNT
+    400076: spine4_result_JNT
+    400078: spine5_result_JNT
+    400080: player_body_GEO
+    400082: player_hair_GEO
+    2300000: hair_GEO
+    2300002: player_body_GEO
+    2300004: player_hair_GEO
+    3300000: hair_GEO
+    3300002: player_body_GEO
+    3300004: player_hair_GEO
+    4300000: hair_GEO
+    4300002: body_GEO
+    4300004: player_hair_GEO
+    4300006: player_body_GEO
+    9500000: //RootNode
+    13700000: body_GEO
+    13700002: player_body_GEO
+    13700004: player_hair_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.008
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
