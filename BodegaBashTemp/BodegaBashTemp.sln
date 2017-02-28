@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{10AB592C-1E7D-7BAE-3DF8-C98D832B1B7B}") = "BodegaBashTemp", "Assembly-CSharp.csproj", "{63D4DA84-01BB-90B1-359C-1BFD3F04391A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63D4DA84-01BB-90B1-359C-1BFD3F04391A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D4DA84-01BB-90B1-359C-1BFD3F04391A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D4DA84-01BB-90B1-359C-1BFD3F04391A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D4DA84-01BB-90B1-359C-1BFD3F04391A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
