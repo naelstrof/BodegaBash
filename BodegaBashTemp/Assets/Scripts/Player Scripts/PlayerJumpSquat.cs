@@ -24,6 +24,7 @@ public class PlayerJumpSquat : PlayerState {
 
 	public override void End(PlayerController player)
 	{
+		UnityEngine.Object.Instantiate(player.JumpDust, player.body.transform.position, Quaternion.LookRotation(player.transform.up));
 		Vector3 old = player.body.velocity;
 		if (time > player.jumpSquatTime) {
 			Vector3 jumpdir = new Vector3 (1, player.fullJumpImpulse, 1);

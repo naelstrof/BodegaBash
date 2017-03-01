@@ -14,7 +14,7 @@ public class PlayerHurt : PlayerState {
     {
 		player.body.constraints = RigidbodyConstraints.None;
 		player.body.velocity = player.body.velocity + impulse;
-		player.body.angularVelocity = player.body.angularVelocity + impulse;
+		player.body.angularVelocity = -player.transform.right*10;
 	}
 
     public override void Update (PlayerController player)

@@ -28,9 +28,11 @@ public class PlayerWalk : PlayerState
             player.SwitchState(new PlayerIdle());
 
 		//Vector3 wantedAngle = new Vector3 (0, -Mathf.Atan2(vert,horz)*180/Mathf.PI+270, 0);
-		Vector3 old = player.body.velocity;
 		if (player.onGround) {
-			player.body.velocity = player.body.transform.forward * vert * player.walkingSpeed + player.body.transform.right * horz * player.walkingSpeed + new Vector3 (0, old.y, 0);
+			Vector3 test = player.body.velocity + (player.body.transform.forward * vert + player.body.transform.right * horz) * Time.deltaTime * player.accel * 100;
+			if (test.magnitude < player.body.velocity.magnitude || test.magnitude < player.walkingSpeed) {
+				player.body.velocity += (player.body.transform.forward * vert + player.body.transform.right * horz) * Time.deltaTime * player.accel * 100;
+			}
 		}
     }
 

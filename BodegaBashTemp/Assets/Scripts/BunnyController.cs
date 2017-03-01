@@ -14,6 +14,12 @@ public class BunnyController : MonoBehaviour {
 	void Update () {
 		Vector3 bunnypos = GetComponent<Transform> ().position;
 		Vector3 playerpos = player.transform.position;
-		GetComponent<NavMeshAgent> ().destination = bunnypos - playerpos;
+		GetComponent<UnityEngine.AI.NavMeshAgent> ().destination = (bunnypos - playerpos)*1.5f;
+	}
+
+	void OnCollisionEnter (Collision c) {
+		Debug.Log ("Nice!");
+		if (c.gameObject.tag == "Player")
+			gameObject.SetActive (false);
 	}
 }

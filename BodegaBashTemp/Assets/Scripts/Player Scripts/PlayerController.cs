@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour {
 
@@ -14,10 +15,17 @@ public class PlayerController : MonoBehaviour {
 	public float shortJumpImpulse = 8;
 	public float jumpSquatTime = 7f / 60f;
 	public float airControl = 2;
-	public Vector3 hitNormal{ get; set; }
+	public new GameObject camera;
+	public ParticleSystem JumpDust;
 
+	public bool onGround{ get; set; }
+	public Vector3 hitNormal{ get; set; }
+	public Vector3 currSpeed{ get; set; }
+
+	private Vector3 prevPos;
     private PlayerState currentState;
     private PlayerState newState;
+	private Vector3 lastPosition;
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 		body = GetComponent<Rigidbody>();
         currentState = new PlayerIdle();
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -52,10 +60,18 @@ public class PlayerController : MonoBehaviour {
         currentState.Update(this);
 	}
 
-	public bool onGround;
-
     public void SwitchState(PlayerState ps)
     {
         newState = ps;
     }
+
+	public Type GetStateType() {
+		return currentState.GetType();
+	}
+
+	void FixedUpdate()
+	{
+		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
+		lastPosition = transform.position;
+	}
 }

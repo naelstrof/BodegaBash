@@ -25,8 +25,8 @@ public class PlayerRun : PlayerState
 		RaycastHit hit;
 		Debug.DrawRay(player.body.transform.position,player.body.transform.forward,Color.red,1f,false);
 		if (Physics.Raycast (player.body.transform.position, player.body.transform.forward, out hit, 1f)) {
-			if (player.body.velocity.magnitude >= player.topSpeed) {
-				player.SwitchState (new PlayerHurt (hit.normal * 15 + new Vector3(0,5,0)));
+			if (player.currSpeed.magnitude >= player.topSpeed-1) {
+				player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3(0,5,0)));
 			}
 		}
 		//float vert = Input.GetAxis("Vertical");
