@@ -26,7 +26,7 @@ public class PlayerAirborne : PlayerState {
 		} else {
 			Vector3 temp = player.body.velocity;
 			temp.y = 0;
-			if (temp.magnitude != 0) {
+			if (temp.magnitude < 1) {
 				desiredRotation.SetLookRotation (temp.normalized);
 			} else {
 				desiredRotation = player.body.transform.rotation;
@@ -35,14 +35,14 @@ public class PlayerAirborne : PlayerState {
 			//player.body.transform.LookAt (player.body.transform.position + temp.normalized);
 		}
 		RaycastHit hit;
-		Debug.DrawRay(player.body.transform.position,player.body.transform.forward,Color.red,1f,false);
-		if (Physics.Raycast (player.body.transform.position, player.body.transform.forward, out hit, 1f)) {
-			Vector3 tempVel = player.currSpeed;
-			tempVel.y = 0;
-			if (tempVel.magnitude >= player.topSpeed - 1) {
-				player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3 (0, 8, 0)));
-			}
-		} else { 
+		Debug.DrawRay(player.body.transform.position,player.body.transform.forward,Color.red,0.7f,false);
+		if (Physics.Raycast (player.body.transform.position, player.body.transform.forward, out hit, 0.7f)) {
+			//Vector3 tempVel = player.currSpeed;
+			//tempVel.y = 0;
+			//if (tempVel.magnitude >= player.topSpeed - 1) {
+			//player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3 (0, 8, 0)));
+			//}
+		} else if ( vert+horz != 0 || Input.GetAxis("Run") != 0 ) {
 			Vector3 desiredvel = player.body.transform.forward * player.speed;
 			if (Vector3.Dot (player.body.velocity.normalized, desiredvel.normalized) < 0.65f) {
 				player.body.velocity += desiredvel * Time.deltaTime * 1.3f;
@@ -53,4 +53,5 @@ public class PlayerAirborne : PlayerState {
 	public override void End(PlayerController player)
 	{
 	}
+		
 }

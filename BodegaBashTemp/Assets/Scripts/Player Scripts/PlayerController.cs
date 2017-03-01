@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour {
 	public bool onGround{ get; set; }
 	public Vector3 hitNormal{ get; set; }
 	public Vector3 currSpeed{ get; set; }
+	public Vector3 wallJumpDirection{ get; set; }
 
+	private float wallJumping;
+	private float failWallJumpTimer;
+	private float lastTimeInNeutral;
 	private Vector3 prevPos;
     private PlayerState currentState;
     private PlayerState newState;
@@ -39,7 +43,7 @@ public class PlayerController : MonoBehaviour {
     {
 		RaycastHit hit;
 		Debug.DrawRay(transform.position,new Vector3 (0, -1, 0)*1,Color.green,1.5f,false);
-		if (Physics.Raycast (transform.position, new Vector3 (0, -1, 0), out hit, 1.5f)) {
+		if (Physics.SphereCast (transform.position+new Vector3(0f,0.5f,0f), .5f, -transform.up, out hit, 1.5f)) {
 			hitNormal = hit.normal;
 			onGround = true;
 		} else {
@@ -58,6 +62,33 @@ public class PlayerController : MonoBehaviour {
             newState = null;
         }
         currentState.Update(this);
+		float vert = Input.GetAxis("Vertical");
+		float horz = Input.GetAxis("Horizontal");
+		if (vert + horz == 0 || currentState.GetType () != typeof(PlayerAirborne)) {
+			lastTimeInNeutral = Time.time;
+		}
+		if ( ((Mathf.Abs (vert) >= 0.8f || Mathf.Abs (horz) >= 0.8f) && Time.time - lastTimeInNeutral < 10f/60f) && failWallJumpTimer <= 0  && currentState.GetType () == typeof(PlayerAirborne)) {
+			wallJumpDirection = camera.transform.forward*vert + camera.transform.right*horz;
+			wallJumping = 20f/60f;
+			failWallJumpTimer = 40f / 60f;
+		}
+		if (wallJumping > 0) {
+			wallJumping -= Time.deltaTime;
+		} else if (failWallJumpTimer > 0) {
+			failWallJumpTimer -= Time.deltaTime;
+		}
+	}
+
+	public void OnTriggerStay( Collider obj ) {
+		if (currentState.GetType () == typeof(PlayerAirborne)) {
+			if (wallJumping > 0) {
+				wallJumping = 0;
+				RaycastHit hit;
+				if (Physics.Raycast(transform.position, (obj.transform.position - transform.position).normalized, out hit)) {
+					SwitchState (new PlayerWallJump (hit.normal));
+				}
+			}
+		}
 	}
 
     public void SwitchState(PlayerState ps)

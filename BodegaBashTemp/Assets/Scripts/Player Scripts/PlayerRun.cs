@@ -7,7 +7,7 @@ public class PlayerRun : PlayerState
 
 	public override void Start(PlayerController player)
 	{
-		player.speed = 0;
+		player.speed = player.currSpeed.magnitude;
 	}
 
 	public override void Update(PlayerController player)
@@ -23,8 +23,8 @@ public class PlayerRun : PlayerState
 		}
 		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"), 0, player.topSpeed);
 		RaycastHit hit;
-		Debug.DrawRay(player.body.transform.position,player.body.transform.forward,Color.red,1f,false);
-		if (Physics.Raycast (player.body.transform.position, player.body.transform.forward, out hit, 1f)) {
+		Debug.DrawRay(player.body.transform.position,player.body.transform.forward,Color.red,0.7f,false);
+		if (Physics.Raycast (player.body.transform.position, player.body.transform.forward, out hit, 0.7f)) {
 			if (player.currSpeed.magnitude >= player.topSpeed-1) {
 				player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3(0,5,0)));
 			}

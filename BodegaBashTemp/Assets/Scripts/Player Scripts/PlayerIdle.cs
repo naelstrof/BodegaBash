@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class PlayerIdle : PlayerState {
-	private bool neutralReset;
 
     public override void Start (PlayerController player)
     {
-		neutralReset = false;
 	}
 
     public override void Update (PlayerController player)
@@ -19,10 +17,7 @@ public class PlayerIdle : PlayerState {
 		}
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
-		if (Mathf.Abs(horz) < 0.5) {
-			neutralReset = true;
-		}
-        if (vert + horz != 0 && neutralReset)
+        if (vert + horz != 0)
             player.SwitchState(new PlayerWalk());
 		
 		if (Input.GetButton ("Jump") && player.onGround) {
