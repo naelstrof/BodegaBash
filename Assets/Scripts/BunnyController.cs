@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BunnyController : MonoBehaviour {
 
-	public GameObject player;
+	public PlayerController player;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class BunnyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 bunnypos = GetComponent<Transform> ().position;
-		Vector3 playerpos = player.transform.position;
+		Vector3 playerpos = player.origin.position;
 		GetComponent<UnityEngine.AI.NavMeshAgent> ().destination = (bunnypos - playerpos)*1.5f;
 	}
 

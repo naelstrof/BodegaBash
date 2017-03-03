@@ -5,6 +5,7 @@ using System;
 public class PlayerController : MonoBehaviour {
 
     public Rigidbody body;
+	public Transform origin;
 	public float speed { get; set; }
     public float topSpeed;
 	public float walkingSpeed;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 	public bool onGround{ get; set; }
 	public Vector3 hitNormal{ get; set; }
 	public Vector3 currSpeed{ get; set; }
-	public Vector3 wallJumpDirection{ get; set; }
+	private Vector3 wallJumpDirection{ get; set; }
 
 	private float wallJumping;
 	private float failWallJumpTimer;
@@ -42,8 +43,8 @@ public class PlayerController : MonoBehaviour {
 	void Update ()
     {
 		RaycastHit hit;
-		Debug.DrawRay(transform.position,new Vector3 (0, -1, 0)*1,Color.green,1.5f,false);
-		if (Physics.SphereCast (transform.position+new Vector3(0f,0.5f,0f), .5f, -transform.up, out hit, 1.5f)) {
+		Debug.DrawRay(origin.position,new Vector3 (0, -1, 0)*1,Color.green,1f,false);
+		if (Physics.SphereCast (origin.position, .5f, -transform.up, out hit, 1f)) {
 			hitNormal = hit.normal;
 			onGround = true;
 		} else {
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour {
 		} else if (failWallJumpTimer > 0) {
 			failWallJumpTimer -= Time.deltaTime;
 		}
+		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
+		lastPosition = transform.position;
 	}
 
 	public void OnTriggerStay( Collider obj ) {
@@ -85,7 +88,11 @@ public class PlayerController : MonoBehaviour {
 				wallJumping = 0;
 				RaycastHit hit;
 				if (Physics.Raycast(transform.position, (obj.transform.position - transform.position).normalized, out hit)) {
-					SwitchState (new PlayerWallJump (hit.normal));
+					Debug.Log ("A" + hit.normal);
+					Debug.Log ("B" + wallJumpDirection);
+					if (Mathf.Abs (hit.normal.y) < 0.3 && Vector3.Dot( hit.normal, wallJumpDirection) > 0) {
+						SwitchState (new PlayerWallJump (hit.normal));
+					}
 				}
 			}
 		}
@@ -102,7 +109,5 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
-		lastPosition = transform.position;
 	}
 }

@@ -13,7 +13,7 @@ public class PlayerWallJump : PlayerState {
 	public override void Start(PlayerController player)
 	{
 		normal.y = 0;
-		player.body.transform.rotation = Quaternion.LookRotation (normal);
+		player.transform.rotation = Quaternion.LookRotation (normal);
 		player.body.constraints = RigidbodyConstraints.FreezeAll;
 		time = 0;
 	}
@@ -33,7 +33,7 @@ public class PlayerWallJump : PlayerState {
 	{
 		player.body.constraints = RigidbodyConstraints.FreezeRotation;
 		direction.Scale (normal);
-		UnityEngine.Object.Instantiate(player.JumpDust, player.body.transform.position, Quaternion.LookRotation(normal));
+		UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(normal));
 		normal.y = 1;
 		player.body.velocity = normal*player.fullJumpImpulse;
 	}

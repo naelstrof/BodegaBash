@@ -12,7 +12,7 @@ public class PlayerIdle : PlayerState {
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}
-		if (Input.GetAxis("Run") != 0) {
+		if (Input.GetAxis("Run") > 0) {
 			player.SwitchState (new PlayerRun());
 		}
         float vert = Input.GetAxis("Vertical");

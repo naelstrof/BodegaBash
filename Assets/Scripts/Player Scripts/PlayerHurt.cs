@@ -14,7 +14,7 @@ public class PlayerHurt : PlayerState {
     {
 		player.body.constraints = RigidbodyConstraints.None;
 		player.body.velocity = player.body.velocity + impulse;
-		player.body.angularVelocity = -player.transform.right*10;
+		player.body.angularVelocity = -player.origin.right*10;
 	}
 
     public override void Update (PlayerController player)
@@ -28,7 +28,7 @@ public class PlayerHurt : PlayerState {
     public override void End(PlayerController player)
     {
 		player.body.constraints = RigidbodyConstraints.FreezeRotation;
-		player.body.transform.eulerAngles = new Vector3 (0, 0, 0);
-		player.body.transform.position += new Vector3 (0, 0.5f, 0);
+		player.transform.eulerAngles = new Vector3 (0, 0, 0);
+		player.transform.position += new Vector3 (0, 0.5f, 0);
     }
 }
