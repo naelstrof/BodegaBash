@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Airborne state, if the player is in the air, he should be in this state.
 public class PlayerAirborne : PlayerState {
 	private Quaternion desiredRotation;
 	public override void Start(PlayerController player)
@@ -10,38 +11,33 @@ public class PlayerAirborne : PlayerState {
 	public override void Update(PlayerController player)
 	{
 		Vector3 old = player.body.velocity;
+		// If the player is on the ground, we switch to an Idle state.
+		// We also do some sanity checking with the old.y<=0, if we're 'airborne' but not moving up or down--
+		// then we're probably actually on the ground and just can't tell.
 		if (old.y <= 0 && player.onGround) {
 			UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(player.origin.up));
 			player.SwitchState (new PlayerIdle ());
 		}
 		float vert = Input.GetAxis("Vertical");
 		float horz = Input.GetAxis("Horizontal");
-		//player.origin.Rotate (new Vector3 (0, horz*player.turningSpeed*player.airControl, 0));
+		// If the player is inputting a direction, we rotate the player towards the angle they are holding.
 		if (vert + horz != 0) {
+			// Gotta transform the player input vector into camera coordinates.
 			Vector3 temp = player.camera.transform.forward * vert + player.camera.transform.right * horz;
 			temp.y = 0;
+			// Quarternions have a sweet function just to generate themselves pointing in the desired direction.
 			desiredRotation.SetLookRotation (temp);
+			// Then we just smoothly rotate toward the desired rotation.
 			player.transform.rotation = Quaternion.RotateTowards (player.transform.rotation, desiredRotation, 360*Time.deltaTime*temp.magnitude);
-			//player.origin.LookAt (player.origin.position + temp);
-		} else {
-			/*Vector3 temp = player.body.velocity;
-			temp.y = 0;
-			if (temp.normalized.magnitude < 1) {
-				desiredRotation.SetLookRotation (temp.normalized);
-			} else {
-				desiredRotation = player.transform.rotation;
-			}*/
-			player.transform.rotation = Quaternion.RotateTowards (player.transform.rotation, desiredRotation, 360*Time.deltaTime);
-			//player.origin.LookAt (player.origin.position + temp.normalized);
 		}
+		// This raytrace checks if there's something immediately in front of the player, 
+		// and prevents him from "grabbing" a wall by thrusting themselves into it.
 		RaycastHit hit;
 		Debug.DrawRay(player.origin.position,player.transform.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.transform.forward, out hit, 0.7f)) {
-			//Vector3 tempVel = player.currSpeed;
-			//tempVel.y = 0;
-			//if (tempVel.magnitude >= player.topSpeed - 1) {
-			//player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3 (0, 8, 0)));
-			//}
+		// We do an additional check to see if the player is trying to move at all, we accept joystick
+		// or RUN button input here. The joystick does in fact control direction somewhat due
+		// to the above rotation code.
 		} else if ( vert+horz != 0 || Input.GetAxis("Run") != 0 ) {
 			Vector3 desiredvel = player.transform.forward * player.speed;
 			if (Vector3.Dot (player.body.velocity.normalized, desiredvel.normalized) < 0.65f) {

@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-	public GameObject followObject;
+	public Rigidbody followObject;
 	public Vector3 offset = new Vector3(-6f,3f,-6f);
 	public Vector3 lookOffset = new Vector3(0f,1.5f,0f);
 	private PlayerController player;
 	private Vector3 desiredPos;
 	void Start() {
+		followObject.interpolation = RigidbodyInterpolation.Interpolate;
 		player = followObject.GetComponent<PlayerController> ();
 	}
-	void FixedUpdate () {
+	void Update () {
 		if (player.currSpeed.magnitude <= 0 || player.GetStateType() == typeof(PlayerWalk) || player.GetStateType() == typeof(PlayerIdle) ) {
 			Vector3 newOffset = offset;
 			newOffset.Scale (followObject.transform.forward);
@@ -24,7 +25,10 @@ public class CameraController : MonoBehaviour {
 			newOffset.y = offset.y;
 			desiredPos = followObject.transform.position + newOffset;
 		}
-		transform.position = transform.position+(desiredPos - transform.position) * Time.deltaTime * 4;
-		transform.LookAt (followObject.transform.position + lookOffset);
+
+		transform.position = transform.position+(desiredPos - transform.position) * Time.deltaTime * 3;
+
+		var targetRotation = Quaternion.LookRotation(followObject.transform.position - transform.position + lookOffset);
+		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
 	}
 }

@@ -12,7 +12,9 @@ public class PlayerHurt : PlayerState {
 
     public override void Start (PlayerController player)
     {
+		// Disable constraints.
 		player.body.constraints = RigidbodyConstraints.None;
+		// Force push
 		player.body.velocity = player.body.velocity + impulse;
 		player.body.angularVelocity = -player.origin.right*10;
 	}
@@ -27,6 +29,7 @@ public class PlayerHurt : PlayerState {
 
     public override void End(PlayerController player)
     {
+		// Enable constraints, reset position and rotation.
 		player.body.constraints = RigidbodyConstraints.FreezeRotation;
 		player.transform.eulerAngles = new Vector3 (0, 0, 0);
 		player.transform.position += new Vector3 (0, 0.5f, 0);
