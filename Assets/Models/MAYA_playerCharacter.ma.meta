@@ -47,6 +47,15 @@ ModelImporter:
     100078: spine5_result_JNT
     100080: player_body_GEO
     100082: player_hair_GEO
+    100084: cart_GEO
+    100086: character_GEO
+    100088: polySurface75
+    100090: polySurface76
+    100092: transform1
+    100094: wheel1_GEO
+    100096: wheel2_GEO
+    100098: wheel3_GEO
+    100100: wheel4_GEO
     400000: body_GEO
     400002: hair_GEO
     400004: head_result_JNT
@@ -89,16 +98,49 @@ ModelImporter:
     400078: spine5_result_JNT
     400080: player_body_GEO
     400082: player_hair_GEO
+    400084: cart_GEO
+    400086: character_GEO
+    400088: polySurface75
+    400090: polySurface76
+    400092: transform1
+    400094: wheel1_GEO
+    400096: wheel2_GEO
+    400098: wheel3_GEO
+    400100: wheel4_GEO
     2300000: hair_GEO
     2300002: player_body_GEO
     2300004: player_hair_GEO
+    2300006: cart_GEO
+    2300008: character_GEO
+    2300010: polySurface75
+    2300012: polySurface76
+    2300014: wheel1_GEO
+    2300016: wheel2_GEO
+    2300018: wheel3_GEO
+    2300020: wheel4_GEO
     3300000: hair_GEO
     3300002: player_body_GEO
     3300004: player_hair_GEO
+    3300006: cart_GEO
+    3300008: character_GEO
+    3300010: polySurface75
+    3300012: polySurface76
+    3300014: wheel1_GEO
+    3300016: wheel2_GEO
+    3300018: wheel3_GEO
+    3300020: wheel4_GEO
     4300000: hair_GEO
     4300002: body_GEO
     4300004: player_hair_GEO
     4300006: player_body_GEO
+    4300008: cart_GEO
+    4300010: character_GEO
+    4300012: polySurface75
+    4300014: polySurface76
+    4300016: wheel1_GEO
+    4300018: wheel2_GEO
+    4300020: wheel3_GEO
+    4300022: wheel4_GEO
     9500000: //RootNode
     13700000: body_GEO
     13700002: player_body_GEO
@@ -127,7 +169,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.008
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
