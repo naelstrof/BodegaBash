@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Maps/level_1.unity
+- path: Assets/Maps/Bridges.unity
   isLoaded: 1
   isActive: 1
