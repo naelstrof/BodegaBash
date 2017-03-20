@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 		float horz = Input.GetAxis("Horizontal"+playerNum);
 		// We record the last time the player had the stick in neutral,
 		// so that it's easier to record a joystick flick.
-		if (vert + horz == 0 || currentState.GetType () != typeof(PlayerAirborne)) {
+		if (vert + horz == 0) {
 			lastTimeInNeutral = Time.time;
 		}
 		// Checking if the stick is now fully flicked, and the last time we were in neutral was less than 1/6th of a second ago, we're not currently in a walljump failure state, and we are in mid-air...
