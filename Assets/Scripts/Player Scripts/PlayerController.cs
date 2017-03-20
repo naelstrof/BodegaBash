@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
     {
 		// We use a spherecast, which is like a "Fat" raytrace to see if we're hitting the ground.
 		RaycastHit hit;
-		Debug.DrawRay(origin.position,new Vector3 (0, -1, 0)*1,Color.green,1f,false);
+		//Debug.DrawRay(origin.position,new Vector3 (0, -1, 0)*1,Color.green,1f,false);
 		if (Physics.SphereCast (origin.position, .5f, -transform.up, out hit, 1f)) {
 			hitNormal = hit.normal;
 			onGround = true;

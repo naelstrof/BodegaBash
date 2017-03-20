@@ -23,7 +23,7 @@ public class PlayerRun : PlayerState
 		}
 		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"+player.playerNum), 0, player.topSpeed);
 		RaycastHit hit;
-		Debug.DrawRay(player.origin.position,player.origin.forward,Color.red,0.7f,false);
+		//Debug.DrawRay(player.origin.position,player.origin.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.origin.forward, out hit, 0.7f)) {
 			if (player.currSpeed.magnitude >= player.topSpeed-1) {
 				player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3(0,5,0)));

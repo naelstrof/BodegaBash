@@ -33,7 +33,7 @@ public class PlayerAirborne : PlayerState {
 		// This raytrace checks if there's something immediately in front of the player, 
 		// and prevents him from "grabbing" a wall by thrusting themselves into it.
 		RaycastHit hit;
-		Debug.DrawRay(player.origin.position,player.transform.forward,Color.red,0.7f,false);
+		//Debug.DrawRay(player.origin.position,player.transform.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.transform.forward, out hit, 0.7f)) {
 		// We do an additional check to see if the player is trying to move at all, we accept joystick
 		// or RUN button input here. The joystick does in fact control direction somewhat due

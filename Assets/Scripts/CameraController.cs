@@ -18,7 +18,6 @@ public class CameraController : MonoBehaviour {
 		switch (player.playerNum) {
 		case "1":
 			{
-				Debug.Log (playerCount);
 				switch (playerCount) {
 				case 3:
 				case 2:
