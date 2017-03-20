@@ -15,13 +15,13 @@ public class PlayerRun : PlayerState
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}
-		if (Input.GetButton ("Jump") && player.onGround) {
+		if (Input.GetButton ("Jump"+player.playerNum) && player.onGround) {
 			player.SwitchState (new PlayerJumpSquat ());
 		}
-		if (Input.GetAxis("Run") <= 0) {
+		if (Input.GetAxis("Run"+player.playerNum) <= 0) {
 			player.SwitchState (new PlayerIdle());
 		}
-		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"), 0, player.topSpeed);
+		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"+player.playerNum), 0, player.topSpeed);
 		RaycastHit hit;
 		Debug.DrawRay(player.origin.position,player.origin.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.origin.forward, out hit, 0.7f)) {
@@ -30,7 +30,7 @@ public class PlayerRun : PlayerState
 			}
 		}
 		//float vert = Input.GetAxis("Vertical");
-		float horz = Input.GetAxis("Horizontal");
+		float horz = Input.GetAxis("Horizontal"+player.playerNum);
 		player.transform.Rotate (new Vector3 (0, horz*player.turningSpeed, 0));
 		Vector3 old = player.body.velocity;
 		if (player.onGround) {

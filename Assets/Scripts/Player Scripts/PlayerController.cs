@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public float shortJumpImpulse = 8;
 	public float jumpSquatTime = 7f / 60f;
 	public float airControl = 2;
+	public string playerNum = "1";
 	public new GameObject camera;
 	public ParticleSystem JumpDust;
 
@@ -67,8 +68,8 @@ public class PlayerController : MonoBehaviour {
         currentState.Update(this);
 
 		// Here's some wall-jumping logic below.
-		float vert = Input.GetAxis("Vertical");
-		float horz = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical"+playerNum);
+		float horz = Input.GetAxis("Horizontal"+playerNum);
 		// We record the last time the player had the stick in neutral,
 		// so that it's easier to record a joystick flick.
 		if (vert + horz == 0 || currentState.GetType () != typeof(PlayerAirborne)) {

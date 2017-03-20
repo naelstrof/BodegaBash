@@ -15,15 +15,15 @@ public class PlayerWalk : PlayerState
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}
-		if (Input.GetButton ("Jump") && player.onGround) {
+		if (Input.GetButton ("Jump"+player.playerNum) && player.onGround) {
 			player.SwitchState (new PlayerJumpSquat ());
 		}
-		if (Input.GetAxis("Run") > 0) {
+		if (Input.GetAxis("Run"+player.playerNum) > 0) {
 			player.SwitchState (new PlayerRun());
 		}
 
-        float vert = Input.GetAxis("Vertical");
-        float horz = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical"+player.playerNum);
+		float horz = Input.GetAxis("Horizontal"+player.playerNum);
 		if (vert + horz == 0) {
 			player.SwitchState (new PlayerIdle ());
 		}

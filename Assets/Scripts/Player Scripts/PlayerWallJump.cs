@@ -20,8 +20,8 @@ public class PlayerWallJump : PlayerState {
 
 	public override void Update(PlayerController player)
 	{
-		float horz = Input.GetAxis("Horizontal");
-		float vert = Input.GetAxis("Vertical");
+		float horz = Input.GetAxis("Horizontal"+player.playerNum);
+		float vert = Input.GetAxis("Vertical"+player.playerNum);
 		direction = new Vector3 (horz, 1, vert);
 		time += Time.deltaTime;
 		if (time > player.jumpSquatTime*1.5) {

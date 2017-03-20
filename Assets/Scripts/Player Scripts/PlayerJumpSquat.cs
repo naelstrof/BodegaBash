@@ -14,7 +14,7 @@ public class PlayerJumpSquat : PlayerState {
 		if (time > player.jumpSquatTime) {
 			player.SwitchState (new PlayerAirborne ());
 		}
-		if (Input.GetButtonUp("Jump")) {
+		if (Input.GetButtonUp("Jump"+player.playerNum)) {
 			player.SwitchState (new PlayerAirborne ());
 		}
 	}
