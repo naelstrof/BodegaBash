@@ -7,10 +7,8 @@ public class CameraController : MonoBehaviour {
 	public Vector3 lookOffset = new Vector3(0f,1.5f,0f);
 	private PlayerController player;
 	private Vector3 desiredPos;
-	private int playerCount;
 	private Camera cam;
 	void Start() {
-		playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
 		followObject.interpolation = RigidbodyInterpolation.Interpolate;
 		player = followObject.GetComponent<PlayerController> ();
 		cam = this.GetComponent<Camera> ();
@@ -18,7 +16,7 @@ public class CameraController : MonoBehaviour {
         // Ghetto packing algorithm
 		switch (player.playerNum) {
 			case "1":
-				switch (playerCount) {
+			switch (Globals.playerCount) {
 					case 3:
 					case 2: cam.rect = new Rect (0, 0f, .5f, 1f); break;
 					case 4: cam.rect = new Rect (0, 0f, .5f, .5f); break;
@@ -26,7 +24,7 @@ public class CameraController : MonoBehaviour {
 				}
 				break;
 			case "2":
-				switch (playerCount) {
+			switch (Globals.playerCount) {
                     case 2: cam.rect = new Rect (0.5f, 0f, .5f, 1f); break;
                     case 3:
                     case 4: cam.rect = new Rect (0.5f, 0.5f, .5f, .5f); break;
