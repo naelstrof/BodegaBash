@@ -15,8 +15,8 @@ public class PlayerIdle : PlayerState {
 		if (Input.GetAxis("Run") > 0) {
 			player.SwitchState (new PlayerRun());
 		}
-        float vert = Input.GetAxis("Vertical");
-        float horz = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical"+player.playerNum);
+		float horz = Input.GetAxis("Horizontal"+player.playerNum);
         if (vert + horz != 0)
             player.SwitchState(new PlayerWalk());
 		

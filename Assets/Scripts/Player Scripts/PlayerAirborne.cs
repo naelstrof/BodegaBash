@@ -18,8 +18,8 @@ public class PlayerAirborne : PlayerState {
 			UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(player.origin.up));
 			player.SwitchState (new PlayerIdle ());
 		}
-		float vert = Input.GetAxis("Vertical");
-		float horz = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical"+player.playerNum);
+		float horz = Input.GetAxis("Horizontal"+player.playerNum);
 		// If the player is inputting a direction, we rotate the player towards the angle they are holding.
 		if (vert + horz != 0) {
 			// Gotta transform the player input vector into camera coordinates.
@@ -38,7 +38,7 @@ public class PlayerAirborne : PlayerState {
 		// We do an additional check to see if the player is trying to move at all, we accept joystick
 		// or RUN button input here. The joystick does in fact control direction somewhat due
 		// to the above rotation code.
-		} else if ( vert+horz != 0 || Input.GetAxis("Run") != 0 ) {
+		} else if ( vert+horz != 0 || Input.GetAxis("Run"+player.playerNum) != 0 ) {
 			Vector3 desiredvel = player.transform.forward * player.speed;
 			if (Vector3.Dot (player.body.velocity.normalized, desiredvel.normalized) < 0.65f) {
 				player.body.velocity += desiredvel * Time.deltaTime * 1.3f;
