@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public float shortJumpImpulse = 8;
 	public float jumpSquatTime = 7f / 60f;
 	public float airControl = 2;
-	public string playerNum = "1";
+	public int playerNum = 0;
 	public new GameObject camera;
 	public ParticleSystem JumpDust;
 

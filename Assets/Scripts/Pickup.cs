@@ -16,7 +16,10 @@ public class Pickup : MonoBehaviour {
 
 	void OnCollisionEnter (Collision c) {
 		Debug.Log ("hitting");
-		if (c.gameObject.tag == "Player")
+		if (c.gameObject.tag == "Player") {
+			PlayerController p = c.gameObject.GetComponentInChildren<PlayerController>();
+			Globals.playerScore [p.playerNum] += 10;
 			gameObject.SetActive (false);
+		}
 	}
 }
