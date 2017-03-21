@@ -8,7 +8,7 @@ public class LoadScore : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Text text = GetComponentInChildren<Text> ();
-		text.text = "PLAYER SCORE: " + Globals.playerScore [Playernum].ToString();
+        text.text = "PLAYER SCORE: " + ScoreCalculator.TallyCart('T', Globals.playerChars[Playernum].Cart);
 	}
 	
 	// Update is called once per frame
