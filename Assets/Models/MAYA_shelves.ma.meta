@@ -16,6 +16,13 @@ ModelImporter:
     100016: shelf_straight_GEO
     100018: shelf_platform_supportless_GEO
     100020: shelf_support_GEO
+    100022: cart_GEO
+    100024: character_GEO
+    100026: hair_GEO
+    100028: wheel1_GEO
+    100030: wheel2_GEO
+    100032: wheel3_GEO
+    100034: wheel4_GEO
     400000: //RootNode
     400002: circularShelf_1
     400004: shelf_1
@@ -27,6 +34,13 @@ ModelImporter:
     400016: shelf_straight_GEO
     400018: shelf_platform_supportless_GEO
     400020: shelf_support_GEO
+    400022: cart_GEO
+    400024: character_GEO
+    400026: hair_GEO
+    400028: wheel1_GEO
+    400030: wheel2_GEO
+    400032: wheel3_GEO
+    400034: wheel4_GEO
     2300000: //RootNode
     2300002: circularShelf_1
     2300004: shelf_1
@@ -38,6 +52,13 @@ ModelImporter:
     2300016: shelf_straight_GEO
     2300018: shelf_platform_supportless_GEO
     2300020: shelf_support_GEO
+    2300022: cart_GEO
+    2300024: character_GEO
+    2300026: hair_GEO
+    2300028: wheel1_GEO
+    2300030: wheel2_GEO
+    2300032: wheel3_GEO
+    2300034: wheel4_GEO
     3300000: //RootNode
     3300002: circularShelf_1
     3300004: shelf_1
@@ -49,6 +70,13 @@ ModelImporter:
     3300016: shelf_straight_GEO
     3300018: shelf_platform_supportless_GEO
     3300020: shelf_support_GEO
+    3300022: cart_GEO
+    3300024: character_GEO
+    3300026: hair_GEO
+    3300028: wheel1_GEO
+    3300030: wheel2_GEO
+    3300032: wheel3_GEO
+    3300034: wheel4_GEO
     4300000: shelf_1
     4300002: circularShelf_1
     4300004: shelf_circular_1
@@ -59,6 +87,13 @@ ModelImporter:
     4300014: shelf_platform_GEO
     4300016: shelf_platform_supportless_GEO
     4300018: shelf_support_GEO
+    4300020: hair_GEO
+    4300022: character_GEO
+    4300024: cart_GEO
+    4300026: wheel1_GEO
+    4300028: wheel2_GEO
+    4300030: wheel3_GEO
+    4300032: wheel4_GEO
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody body;
 	public Transform origin;
 	public float speed { get; set; }
-    public float topSpeed;
-	public float walkingSpeed;
+    public float topSpeed = 20;
+	public float walkingSpeed = 8;
 	public float turningSpeed;
 	public float accel;
 	public float jumpInfluence;

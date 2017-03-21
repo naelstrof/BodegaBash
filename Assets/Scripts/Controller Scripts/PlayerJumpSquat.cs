@@ -26,11 +26,11 @@ public class PlayerJumpSquat : PlayerState {
 		Vector3 old = player.body.velocity;
 		// If the player held the button for the duration of the jump squat, we do a full jump
 		if (time > player.jumpSquatTime) {
-			Vector3 jumpdir = new Vector3 (1, player.fullJumpImpulse, 1);
+			Vector3 jumpdir = new Vector3 (0, player.fullJumpImpulse, 0);
 			player.body.velocity = old + jumpdir;
 		// Otherwise a short hop
 		} else {
-			Vector3 jumpdir = new Vector3 (1, player.shortJumpImpulse, 1);
+			Vector3 jumpdir = new Vector3 (0, player.shortJumpImpulse, 0);
 			player.body.velocity = old + jumpdir;
 		}
 	}

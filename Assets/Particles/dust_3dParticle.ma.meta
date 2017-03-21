@@ -13,6 +13,13 @@ ModelImporter:
     100010: transform1
     100012: transform2
     100014: transform3
+    100016: cart_GEO
+    100018: character_GEO
+    100020: hair_GEO
+    100022: wheel1_GEO
+    100024: wheel2_GEO
+    100026: wheel3_GEO
+    100028: wheel4_GEO
     400000: //RootNode
     400002: pCube1
     400004: pCube2
@@ -21,18 +28,46 @@ ModelImporter:
     400010: transform1
     400012: transform2
     400014: transform3
+    400016: cart_GEO
+    400018: character_GEO
+    400020: hair_GEO
+    400022: wheel1_GEO
+    400024: wheel2_GEO
+    400026: wheel3_GEO
+    400028: wheel4_GEO
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
     2300006: dust_GEO
+    2300008: cart_GEO
+    2300010: character_GEO
+    2300012: hair_GEO
+    2300014: wheel1_GEO
+    2300016: wheel2_GEO
+    2300018: wheel3_GEO
+    2300020: wheel4_GEO
     3300000: pCube1
     3300002: pCube2
     3300004: pCube3
     3300006: dust_GEO
+    3300008: cart_GEO
+    3300010: character_GEO
+    3300012: hair_GEO
+    3300014: wheel1_GEO
+    3300016: wheel2_GEO
+    3300018: wheel3_GEO
+    3300020: wheel4_GEO
     4300000: pCube1
     4300002: pCube2
     4300004: pCube3
     4300006: dust_GEO
+    4300008: hair_GEO
+    4300010: character_GEO
+    4300012: cart_GEO
+    4300014: wheel1_GEO
+    4300016: wheel2_GEO
+    4300018: wheel3_GEO
+    4300020: wheel4_GEO
     7400000: Take 001
     9500000: //RootNode
   materials:
