@@ -5,7 +5,8 @@ using UnityEngine;
 public class Pickup : MonoBehaviour {
 
     public int ID;
-
+	private GameObject Target;
+	private float SpeedUp;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,12 +18,20 @@ public class Pickup : MonoBehaviour {
         gameObject.transform.Rotate(Vector3.up, 1.5f);
     }
 
-	void OnCollisionEnter (Collision c) {
-		Debug.Log ("picking up item #" + ID);
-		if (c.gameObject.tag == "Player") {
-			PlayerController p = c.gameObject.GetComponentInChildren<PlayerController>();
-            Globals.playerChars[p.playerNum].AddToCart(ID);
-			gameObject.SetActive (false);
+	void OnTriggerEnter (Collider c) {
+		SpeedUp = 1;
+		Target = c.gameObject;
+	}
+	void OnTriggerStay( Collider c ) {
+		transform.position += (Target.transform.position - transform.position)*Time.deltaTime*SpeedUp;
+		SpeedUp += Time.deltaTime*5;
+		if (Vector3.Distance (transform.position, Target.transform.position) < 0.8f) {
+			Debug.Log ("picking up item #" + ID);
+			if (c.gameObject.tag == "Player") {
+				PlayerController p = c.gameObject.GetComponentInChildren<PlayerController>();
+				Globals.playerChars[p.playerNum].AddToCart(ID);
+				gameObject.SetActive (false);
+			}
 		}
 	}
 }

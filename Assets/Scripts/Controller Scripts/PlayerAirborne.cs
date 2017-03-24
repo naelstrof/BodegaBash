@@ -20,7 +20,6 @@ public class PlayerAirborne : PlayerState {
 		}
 		float vert = Input.GetAxis("Vertical"+player.playerNum);
 		float horz = Input.GetAxis("Horizontal"+player.playerNum);
-		Debug.Log (vert);
 		// If the player is inputting a direction, we rotate the player towards the angle they are holding.
 		if (vert + horz != 0) {
 			// Gotta transform the player input vector into camera coordinates.
