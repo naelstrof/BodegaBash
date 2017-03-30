@@ -33,7 +33,7 @@ public class PlayerWallJump : PlayerState {
 	{
 		player.body.constraints = RigidbodyConstraints.FreezeRotation;
 		direction.Scale (normal);
-		UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(normal));
+		ParticleHandler.SpawnDust (player, "jumping", normal);
 		normal.y = 1;
 		player.body.velocity = normal*player.fullJumpImpulse;
 	}

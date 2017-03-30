@@ -15,7 +15,7 @@ public class PlayerAirborne : PlayerState {
 		// We also do some sanity checking with the old.y<=0, if we're 'airborne' but not moving up or down--
 		// then we're probably actually on the ground and just can't tell.
 		if (old.y <= 0 && player.onGround) {
-			UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(player.origin.up));
+			ParticleHandler.SpawnDust (player, "landing", player.origin.up);
 			player.SwitchState (new PlayerIdle ());
 		}
 		float vert = Input.GetAxis("Vertical"+player.playerNum);

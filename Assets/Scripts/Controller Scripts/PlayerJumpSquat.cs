@@ -23,7 +23,7 @@ public class PlayerJumpSquat : PlayerState {
 	{
 		Globals.SpawnSound (player.jumpSound, player.transform.position);
 		// Spawn a new jump dust object at the players feet
-		UnityEngine.Object.Instantiate(player.JumpDust, player.origin.position, Quaternion.LookRotation(player.transform.up));
+		ParticleHandler.SpawnDust (player, "jumping", player.origin.up);
 		Vector3 old = player.body.velocity;
 		// If the player held the button for the duration of the jump squat, we do a full jump
 		if (time > player.jumpSquatTime) {
