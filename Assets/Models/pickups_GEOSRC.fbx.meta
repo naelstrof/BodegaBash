@@ -9,19 +9,44 @@ ModelImporter:
     100002: powerup_GEO
     100004: supply_apple_GEO
     100006: supply_solidFood_GEO
+    100008: supply_bandage_GEO
+    100010: supply_firstAid_GEO
+    100012: supply_pills_GEO
+    100014: supply_satellitePhone_GEO
+    100016: supply_walkieTalkie_GEO
     400000: //RootNode
     400002: powerup_GEO
     400004: supply_apple_GEO
     400006: supply_solidFood_GEO
+    400008: supply_bandage_GEO
+    400010: supply_firstAid_GEO
+    400012: supply_pills_GEO
+    400014: supply_satellitePhone_GEO
+    400016: supply_walkieTalkie_GEO
     2300000: powerup_GEO
     2300002: supply_apple_GEO
     2300004: supply_solidFood_GEO
+    2300006: supply_bandage_GEO
+    2300008: supply_firstAid_GEO
+    2300010: supply_pills_GEO
+    2300012: supply_satellitePhone_GEO
+    2300014: supply_walkieTalkie_GEO
     3300000: powerup_GEO
     3300002: supply_apple_GEO
     3300004: supply_solidFood_GEO
+    3300006: supply_bandage_GEO
+    3300008: supply_firstAid_GEO
+    3300010: supply_pills_GEO
+    3300012: supply_satellitePhone_GEO
+    3300014: supply_walkieTalkie_GEO
     4300000: powerup_GEO
     4300002: supply_apple_GEO
     4300004: supply_solidFood_GEO
+    4300006: supply_bandage_GEO
+    4300008: supply_pills_GEO
+    4300010: supply_firstAid_GEO
+    4300012: supply_satellitePhone_GEO
+    4300014: supply_walkieTalkie_GEO
   materials:
     importMaterials: 1
     materialName: 0
