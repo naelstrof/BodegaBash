@@ -20,12 +20,15 @@ public class OnLoad : MonoBehaviour {
 		}
 		Globals.playerScore = new int[4];
         Globals.playerChars = new PlayerCharacter[4];
+		Globals.clearListener ();
 
         // initialize the players in this round
         Globals.playerChars = new PlayerCharacter[Globals.playerCount];
         // we could load in character choices as strings from an array filled during the character selection screen
         for(int i = 0; i < Globals.playerCount; i++)
             Globals.playerChars[i] = new PlayerCharacter(CharacterTable.Defs["JOE DUDE"], 1000, 1000);
+
+
 	}
 	
 	// Update is called once per frame

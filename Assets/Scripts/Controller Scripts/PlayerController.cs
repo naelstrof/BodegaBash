@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public int playerNum = 0;
 	public new GameObject camera;
 	public ParticleSystem JumpDust;
+	public AudioClip jumpSound;
 
 	public bool onGround{ get; set; }
 	public Vector3 hitNormal{ get; set; }

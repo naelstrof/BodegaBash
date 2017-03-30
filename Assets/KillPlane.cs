@@ -20,7 +20,7 @@ public class KillPlane : MonoBehaviour {
 				PlayerController pc = p.GetComponentInChildren<PlayerController>();
 				pc.SwitchState (new PlayerHurt (new Vector3(0, 0, 0)));
 				pc.body.velocity = new Vector3 (0, 0, 0);
-				CameraController c = p.GetComponentInChildren<CameraController> ();
+				GameObject c = pc.camera;
 				c.transform.position = RandSpawn.transform.position;
 			}
 		}
