@@ -4,6 +4,10 @@ using System;
 
 public class PlayerController : MonoBehaviour {
 
+    public PlayerCharacter character;     // preferrable to keeping two arrays in Globals?
+                                          // EDIT: We could merge PlayerCharacter into PlayerController.
+                                          //       Maybe just move the members over?
+
     public Rigidbody body;
 	public Transform origin;
 	public float speed { get; set; }
@@ -37,7 +41,9 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		body = GetComponent<Rigidbody>();
+        character = Globals.playerChars[playerNum];
+
+        body = GetComponent<Rigidbody>();
 		body.interpolation = RigidbodyInterpolation.Interpolate;
         currentState = new PlayerIdle();
 	}

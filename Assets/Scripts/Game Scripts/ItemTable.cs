@@ -34,7 +34,7 @@ public static class ItemTable
         // FIRE items
         { 71, new ItemDef(71, "fire blanket", Globals.CAT_FIRE, 1, 800) },
         { 72, new ItemDef(72, "fire axe", Globals.CAT_FIRE, 2, 1400) },
-        { 73, new ItemDef(73, "fire extinguisher", Globals.CAT_FIRE, 3, 2000) },
+        { 73, new ItemDef(73, "fire blanket", Globals.CAT_FIRE, 3, 2000) },
         // NEUT items
         { 81, new ItemDef(81, "mini chem kit", Globals.CAT_NEUT, 1, 500) },
         { 82, new ItemDef(82, "medium chem kit", Globals.CAT_NEUT, 2, 1500) },
