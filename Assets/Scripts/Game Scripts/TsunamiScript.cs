@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterScript : MonoBehaviour {
+public class TsunamiScript : MonoBehaviour {
 
     PlayerController player;
 
@@ -14,7 +14,16 @@ public class WaterScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         // move the water plane
-        transform.Translate(new Vector3(0, 0.01f, 0), Space.World);
+        transform.Translate(Vector3.back * 0.25f, Space.World);
+    }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.gameObject.tag == "Player")
+        {
+            player = c.gameObject.GetComponent<PlayerController>();
+            player.character.underwater = true;
+        }
     }
 
     void OnCollisionStay(Collision c)
@@ -26,7 +35,14 @@ public class WaterScript : MonoBehaviour {
             if (!player.character.ConsumeA(1))      // if the player is out of floatation supplies,
                 player.character.TakeDamage(2);     //   then inflict moderate damage over time            
         }
-
     }
 
+    void OnCollisionExit(Collision c)
+    {
+        if (c.gameObject.tag == "Player")
+        {
+            player = c.gameObject.GetComponent<PlayerController>();
+            player.character.underwater = false;
+        }
+    }
 }

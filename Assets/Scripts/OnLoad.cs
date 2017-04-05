@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class OnLoad : MonoBehaviour {
 
+    int sceneNum;
+
 	public GameObject Player;
 	public GameObject TsunamiGame;
 	public GameObject EarthquakeGame;
@@ -13,7 +15,22 @@ public class OnLoad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+        sceneNum = SceneManager.GetActiveScene().buildIndex;
+        switch(sceneNum)
+        {
+            case 3:
+            case 4:
+            case 5:
+                Globals.Shopping = true;
+                break;
+            case 7:
+            case 8:
+            case 9:
+                Globals.Shopping = false;
+                break;
+        }
+
         if (Globals.Shopping)
         {
             startTime = Time.time;
@@ -25,8 +42,10 @@ public class OnLoad : MonoBehaviour {
                 PlayerController PC = player.GetComponentInChildren<PlayerController>();
                 PC.playerNum = i;
             }
-            Globals.shoppingScores = new int[4];
             Globals.playerChars = new PlayerCharacter[4];
+            Globals.shoppingScores = new int[4];
+            Globals.minigameScores = new int[4];
+            Globals.atGoal = new bool[4];
             Globals.clearListener();
 
             // initialize the players in this round
@@ -67,8 +86,8 @@ public class OnLoad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(Time.time - startTime + "\ts / " + Globals.gameTimer);
-        if (Time.time - startTime > Globals.gameTimer)
+		//Debug.Log(Time.time - startTime + "\ts / " + Globals.gameTimer);
+        if (Time.time - startTime > Globals.shoppingTimer)
             if (Globals.Shopping)
             {
                 for (int i = 0; i < Globals.playerCount; i++)

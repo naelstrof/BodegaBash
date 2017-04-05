@@ -5,7 +5,7 @@ using UnityEngine;
 public class VictimScript : MonoBehaviour
 {
 
-    PlayerCharacter player;
+    PlayerController player;
     public bool contaminated;
     public float aggroRange;
 
@@ -13,7 +13,7 @@ public class VictimScript : MonoBehaviour
     void Start()
     {
         contaminated = false;
-        aggroRange = 5f;
+        aggroRange = 100f;
     }
 
     // Update is called once per frame
@@ -41,6 +41,14 @@ public class VictimScript : MonoBehaviour
                 GetComponent<UnityEngine.AI.NavMeshAgent>().destination = target;
         }
     }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (contaminated)
+            if (c.gameObject.tag == "Player")
+                c.gameObject.GetComponent<PlayerController>().character.contaminated = true;
+    }
+
 
     /// <summary>
     /// This should be called from the PlayerController script,

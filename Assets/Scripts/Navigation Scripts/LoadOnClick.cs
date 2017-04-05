@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadOnClick : MonoBehaviour {
 
-
-
 	public void LoadByIndex(int sceneIndex)
     {
         switch(sceneIndex)
