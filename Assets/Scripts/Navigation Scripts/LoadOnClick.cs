@@ -32,34 +32,15 @@ public class LoadOnClick : MonoBehaviour {
         }
 	}
 
-    public void SetScenario(char disaster)
+    public void SetScenario(string disaster)
     {
-        if ((disaster == 'T') || (disaster == 'E') || (disaster == 'C'))
-            Globals.Scenario = disaster;
+		if ((disaster[0] == 'T') || (disaster[0] == 'E') || (disaster[0] == 'C'))
+			Globals.Scenario = (char)disaster[0];
         else
             Debug.Log("ERROR :: invalid scenario code (must be in { T, E, C })");
     }
 
     public void SetPlayerCount( int num ) {
-        switch(num)
-        {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-		        Globals.playerCount = num;
-                break;
-            case 111:
-                SetScenario('T');
-                break;
-            case 222:
-                SetScenario('E');
-                break;
-            case 333:
-                SetScenario('C');
-                break;
-
-        }
+        Globals.playerCount = num;
     }
 }

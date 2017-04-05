@@ -28,8 +28,8 @@ public class VictimScript : MonoBehaviour
 
             // get the position and distance of every player within the aggro range
             for (int i = 0; i < Globals.playerCount; i++)
-                if (Vector3.Distance(Globals.playerScripts[i].origin.position, transform.position) < aggroRange)
-                    cands.Add(Globals.playerScripts[i].origin.position, Vector3.Distance(Globals.playerScripts[i].origin.position, transform.position));
+                if (Vector3.Distance(Globals.playerControllers[i].origin.position, transform.position) < aggroRange)
+                    cands.Add(Globals.playerControllers[i].origin.position, Vector3.Distance(Globals.playerControllers[i].origin.position, transform.position));
 
             // select the position of the closest player...
             foreach (KeyValuePair<Vector3, float> kvp in cands)
@@ -53,6 +53,5 @@ public class VictimScript : MonoBehaviour
         contaminated = false;
         Globals.playerChars[_pNum].aidGiven++;
     }
-
 
 }
