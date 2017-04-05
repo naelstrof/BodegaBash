@@ -8,11 +8,13 @@ public static class Globals
 	public static int playerCount = 1;
 	public static int[] shoppingScores = new int[4];
     public static int[] minigameScores = new int[4];
+    public static bool[] atGoal = new bool[4];
     public static PlayerCharacter[] playerChars = new PlayerCharacter[4];
     public static PlayerController[] playerControllers = new PlayerController[4];
     public static char Scenario = ' ';  // 'T' for tsunami  // 'E' for earthquake   // 'C' for chemical spill
-    public static bool Shopping = true;
-	public static int gameTimer = 5;
+    public static bool Shopping = false;
+	public static int shoppingTimer = 300;
+    public static int minigameTimer = 300;
 
     // ITEM CATEGORIES
     public const string CAT_FOOD = "food";              // food and water

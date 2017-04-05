@@ -10,7 +10,6 @@ using UnityEngine.Scripting;
 public class ChemicalGame : MonoBehaviour
 {
 	GameObject[] victims;   // all spill victims in the map
-	public float MGtime;
 	float t0;
 	bool goalFinish;
 	bool deathFinish;
@@ -36,13 +35,12 @@ public class ChemicalGame : MonoBehaviour
 		goalFinish = true;
 
 		// do NOT end the round early if there is time remaining
-		if ((Time.time - t0) < MGtime)
+		if ((Time.time - t0) < Globals.minigameTimer)
 			timerFinish = false;
 
 		// do minigame-related stuff with all the players
 		for (int i = 0; i < Globals.playerCount; i++)
 		{
-			ps = Globals.playerControllers[i];
 			pc = Globals.playerChars[i];
 
 			if (pc.Alive)
@@ -54,11 +52,6 @@ public class ChemicalGame : MonoBehaviour
 					pc.TakeDamage((pc.chemBuildup++ / 500) + 1);    // chemical damage increases as the player stays contaminated
 				else
 					pc.chemBuildup = 0;                             // if the player isn't contaminated, reset their contamination counter to zero
-
-				// contaminate players who are too close to a victim (measured by their origin)
-				for (int v = 0; v < victims.Length; v++)  // yes, I know this nested loop is questionable
-					if (Vector3.Distance(victims[v].transform.position, ps.transform.position) < 1)
-						pc.contaminated = true;
 			}
 		}
 
