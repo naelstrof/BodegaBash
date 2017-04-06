@@ -19,9 +19,6 @@ public class TsunamiGame : MonoBehaviour
 	public void Start()
 	{
 		t0 = Time.time;
-		GameObject tsunami = GameObject.FindGameObjectWithTag("Tsunami");
-		if (tsunami == null)
-			Debug.Log("Water plane not set (you may be loading the wrong minigame for this map)");
 		Globals.atGoal = new bool[Globals.playerCount];
 	}
 
@@ -54,11 +51,8 @@ public class TsunamiGame : MonoBehaviour
 
 	public void OnDestroy()
 	{
-		Debug.Log ("ON DESTROY");
-		Debug.Log ("playerCount = " + Globals.playerCount);
 		// score for this minigame is based on (1) your final height (2) FixedUpdate frames spent underwater
 		for (int i = 0; i < Globals.playerCount; i++) {
-			Debug.Log ("player " + i);
 			Globals.minigameScores [i] = (int)(500 * Globals.playerControllers [i].origin.position.y) - (Globals.playerChars [i].timeUnderwater);
 		}
 	}

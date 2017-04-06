@@ -86,17 +86,18 @@ public class OnLoad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log(Time.time - startTime + "\ts / " + Globals.gameTimer);
-        if (Time.time - startTime > Globals.shoppingTimer)
-            if (Globals.Shopping)
-            {
-                for (int i = 0; i < Globals.playerCount; i++)
-                    Globals.shoppingScores[i] = ScoreCalculator.TallyCart(Globals.Scenario, Globals.playerChars[i].Cart);
-                SceneManager.LoadScene(6);         // score screen
-            }
-            else
-            {
-                SceneManager.LoadScene(10);
-            }
+		if (Globals.Shopping) {
+			if (Time.time - startTime > Globals.shoppingTimer) {
+				
+				for (int i = 0; i < Globals.playerCount; i++)
+					Globals.shoppingScores [i] = ScoreCalculator.TallyCart (Globals.Scenario, Globals.playerChars [i].Cart);
+				SceneManager.LoadScene (6);
+			}
+		}
+		else
+		{
+			if (Time.time - startTime > Globals.minigameTimer)
+				SceneManager.LoadScene (10);
+		}
 	}
 }

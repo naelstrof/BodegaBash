@@ -15,14 +15,18 @@ public class GoalScript : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider c)
-    {
-        if (c.gameObject.tag == "Player")
-            Globals.atGoal[c.gameObject.GetComponent<PlayerController>().playerNum] = true;
-    }
+	{
+		if (c.gameObject.tag == "Player") {
+			Debug.Log ("player " + c.gameObject.GetComponent<PlayerController> ().playerNum + " at goal");
+			Globals.atGoal [c.gameObject.GetComponent<PlayerController> ().playerNum] = true;
+		}
+	}
 
     void OnTriggerExit(Collider c)
-    {
-        if (c.gameObject.tag == "Player")
-            Globals.atGoal[c.gameObject.GetComponent<PlayerController>().playerNum] = false;
-    }
+	{
+		if (c.gameObject.tag == "Player") {
+			Debug.Log ("player " + c.gameObject.GetComponent<PlayerController> ().playerNum + " leaving goal");
+			Globals.atGoal [c.gameObject.GetComponent<PlayerController> ().playerNum] = false;
+		}
+	}
 }

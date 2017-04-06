@@ -16,29 +16,29 @@ public class HUDScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        gameStarter = GameObject.FindGameObjectWithTag("GameStarter");
-        if (gameStarter == null)
-            Debug.Log("GAMESTARTER NULL");
-        gameScript = gameStarter.GetComponent<OnLoad>();
-        if (gameScript == null)
-            Debug.Log("GAMESCRIPT NULL");
-        text = GetComponentInChildren<Text>();
-        if (text == null)
-            Debug.Log("TEXT NULL");
-        startTime = Time.time;
-
-        if (Globals.Shopping)
-            gameTimer = Globals.shoppingTimer;
-        else
-            gameTimer = Globals.minigameTimer;
+//        gameStarter = GameObject.FindGameObjectWithTag("GameStarter");
+//        if (gameStarter == null)
+//            Debug.Log("GAMESTARTER NULL");
+//        gameScript = gameStarter.GetComponent<OnLoad>();
+//        if (gameScript == null)
+//            Debug.Log("GAMESCRIPT NULL");
+//        text = GetComponentInChildren<Text>();
+//        if (text == null)
+//            Debug.Log("TEXT NULL");
+//        startTime = Time.time;
+//
+//        if (Globals.Shopping)
+//            gameTimer = Globals.shoppingTimer;
+//        else
+//            gameTimer = Globals.minigameTimer;
     }
 
     // Update is called once per frame
     void FixedUpdate () {
 
-        currentTime = Time.time;
-
-        text.text = "" + (int)(gameTimer - (currentTime - startTime)) + "s";
+//        currentTime = Time.time;
+//
+//        text.text = "" + (int)(gameTimer - (currentTime - startTime)) + "s";
 
     }
 }
