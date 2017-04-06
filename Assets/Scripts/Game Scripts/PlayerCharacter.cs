@@ -46,7 +46,6 @@ public class PlayerCharacter
     public int RsrcB { get { return rsrcB; } }
     public int RsrcC { get { return rsrcC; } }
 
-    public bool underwater;
     public int timeUnderwater;
 
     public int healthLost;

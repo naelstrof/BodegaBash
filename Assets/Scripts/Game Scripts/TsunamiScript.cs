@@ -5,6 +5,7 @@ using UnityEngine;
 public class TsunamiScript : MonoBehaviour {
 
     PlayerController player;
+    Rigidbody body;
 
     // Use this for initialization
     void Start () {
@@ -17,16 +18,19 @@ public class TsunamiScript : MonoBehaviour {
         transform.Translate(Vector3.back * 0.25f, Space.World);
     }
 
-    void OnCollisionEnter(Collision c)
+    void OnTriggerEnter(Collision c)
     {
         if (c.gameObject.tag == "Player")
         {
             player = c.gameObject.GetComponent<PlayerController>();
-            player.character.underwater = true;
+            player.topSpeed *= 0.5f;
+            player.accel *= 0.5f;
+            player.airControl *= 0.5f;
+            player.fullJumpImpulse *= 0.5f;
         }
     }
 
-    void OnCollisionStay(Collision c)
+    void OnTriggerStay(Collision c)
     {
         if (c.gameObject.tag == "Player")
         {
@@ -37,12 +41,15 @@ public class TsunamiScript : MonoBehaviour {
         }
     }
 
-    void OnCollisionExit(Collision c)
+    void OnTriggerExit(Collision c)
     {
         if (c.gameObject.tag == "Player")
         {
             player = c.gameObject.GetComponent<PlayerController>();
-            player.character.underwater = false;
+            player.topSpeed *= 2;
+            player.accel *= 2;
+            player.airControl *= 2;
+            player.fullJumpImpulse *= 2;
         }
     }
 }

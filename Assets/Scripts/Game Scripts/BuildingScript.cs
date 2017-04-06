@@ -17,39 +17,12 @@ public class BuildingScript : MonoBehaviour
     void FixedUpdate()
     {
         // move the building downward and foward
-        transform.Translate(new Vector3(1, -1, 0) * 0.1f, Space.World);
-        transform.Rotate(new Vector3(0, 0, -1) * 0.01f, Space.World);
+        transform.Translate(Vector3.right * 0.1f, Space.World);
     }
 
-    void OnCollisionEnter(Collision c)
+    void OnTriggerEnter(Collision c)
     {
         if (c.gameObject.tag == "Player")
-        {
-            Debug.Log("enter");
-            player = c.gameObject.GetComponent<PlayerController>();
-            player.character.underwater = true;
-        }
-    }
-
-    void OnCollisionStay(Collision c)
-    {
-        if (c.gameObject.tag == "Player")
-        {
-            Debug.Log("stay");
-            player = c.gameObject.GetComponent<PlayerController>();
-            player.character.timeUnderwater++;
-            if (!player.character.ConsumeA(1))      // if the player is out of floatation supplies,
-                player.character.TakeDamage(2);     //   then inflict moderate damage over time            
-        }
-    }
-
-    void OnCollisionExit(Collision c)
-    {
-        if (c.gameObject.tag == "Player")
-        {
-            Debug.Log("exit");
-            player = c.gameObject.GetComponent<PlayerController>();
-            player.character.underwater = false;
-        }
+            c.gameObject.GetComponent<PlayerController>().character.TakeDamage(99999);
     }
 }
