@@ -53,7 +53,7 @@ public class TsunamiGame : MonoBehaviour
 	{
 		// score for this minigame is based on (1) your final height (2) FixedUpdate frames spent underwater
 		for (int i = 0; i < Globals.playerCount; i++) {
-			Globals.minigameScores [i] = (int)(500 * Globals.playerControllers [i].origin.position.y) - (Globals.playerChars [i].timeUnderwater);
+			//Globals.minigameScores [i] = (int)(500 * Globals.playerControllers [i].origin.position.y) - (Globals.playerChars [i].timeUnderwater);
 		}
 	}
 }

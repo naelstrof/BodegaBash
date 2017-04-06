@@ -14,6 +14,10 @@ public class PlayerRun : PlayerState
 	{
 		float run = Input.GetAxis ("Run" + player.playerNum);
 		float back = Input.GetAxis ("Back" + player.playerNum);
+		if ( run < 0 ) { run = 0; }
+		if (back < 0) {
+			back = 0;
+		}
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}
