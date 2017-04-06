@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour {
 		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
 		lastPosition = transform.position;
 		animator.SetFloat("runSpeed", (Mathf.Abs(currSpeed.x)+Math.Abs(currSpeed.z)+0.1f)*0.1f);
-		animator.SetBool ("isRunning", onGround);
+		//animator.SetBool ("isRunning", onGround);
 	}
 
 	// This function is called automatically whenever something is within the trigger.
