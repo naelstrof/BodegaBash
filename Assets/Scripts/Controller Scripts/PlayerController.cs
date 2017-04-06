@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	public new GameObject camera;
 	public ParticleSystem JumpDust;
 	public AudioClip jumpSound;
+	private Animator animator;
 
 	public bool onGround{ get; set; }
 	public Vector3 hitNormal{ get; set; }
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour {
         body = GetComponent<Rigidbody>();
 		body.interpolation = RigidbodyInterpolation.Interpolate;
         currentState = new PlayerIdle();
+		animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -101,6 +103,8 @@ public class PlayerController : MonoBehaviour {
 		// separately keep track of our actual velocity ourselves.
 		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
 		lastPosition = transform.position;
+		animator.SetFloat("runSpeed", (Mathf.Abs(currSpeed.x)+Math.Abs(currSpeed.z)+0.1f)*0.1f);
+		animator.SetBool ("isRunning", onGround);
 	}
 
 	// This function is called automatically whenever something is within the trigger.
