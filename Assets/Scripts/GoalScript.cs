@@ -14,13 +14,13 @@ public class GoalScript : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision c)
+    void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Player")
             Globals.atGoal[c.gameObject.GetComponent<PlayerController>().playerNum] = true;
     }
 
-    void OnCollisionExit(Collision c)
+    void OnTriggerExit(Collider c)
     {
         if (c.gameObject.tag == "Player")
             Globals.atGoal[c.gameObject.GetComponent<PlayerController>().playerNum] = false;

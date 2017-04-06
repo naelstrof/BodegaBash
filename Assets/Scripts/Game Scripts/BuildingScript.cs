@@ -20,7 +20,7 @@ public class BuildingScript : MonoBehaviour
         transform.Translate(Vector3.right * 0.1f, Space.World);
     }
 
-    void OnTriggerEnter(Collision c)
+    void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Player")
             c.gameObject.GetComponent<PlayerController>().character.TakeDamage(99999);

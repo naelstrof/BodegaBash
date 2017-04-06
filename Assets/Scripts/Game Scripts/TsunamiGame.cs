@@ -22,6 +22,7 @@ public class TsunamiGame : MonoBehaviour
 		GameObject tsunami = GameObject.FindGameObjectWithTag("Tsunami");
 		if (tsunami == null)
 			Debug.Log("Water plane not set (you may be loading the wrong minigame for this map)");
+		Globals.atGoal = new bool[Globals.playerCount];
 	}
 
 	public void FixedUpdate()
