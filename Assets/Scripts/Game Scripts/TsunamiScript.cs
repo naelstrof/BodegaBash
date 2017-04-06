@@ -18,34 +18,34 @@ public class TsunamiScript : MonoBehaviour {
         transform.Translate(Vector3.back * 0.25f, Space.World);
     }
 
-    void OnTriggerEnter(Collision c)
+	void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Player")
         {
-            player = c.gameObject.GetComponent<PlayerController>();
-            player.topSpeed *= 0.5f;
-            player.accel *= 0.5f;
-            player.airControl *= 0.5f;
-            player.fullJumpImpulse *= 0.5f;
+			player = c.gameObject.GetComponentInChildren<PlayerController>();
+            player.topSpeed *= 0.7f;
+            player.accel *= 0.1f;
+            player.airControl *= 0.7f;
+            player.fullJumpImpulse *= 0.9f;
         }
     }
 
-    void OnTriggerStay(Collision c)
+	void OnTriggerStay(Collider c)
     {
         if (c.gameObject.tag == "Player")
         {
-            player = c.gameObject.GetComponent<PlayerController>();
+            player = c.gameObject.GetComponentInChildren<PlayerController>();
             player.character.timeUnderwater++; 
             if (!player.character.ConsumeA(1))      // if the player is out of floatation supplies,
                 player.character.TakeDamage(2);     //   then inflict moderate damage over time            
         }
     }
 
-    void OnTriggerExit(Collision c)
+    void OnTriggerExit(Collider c)
     {
         if (c.gameObject.tag == "Player")
         {
-            player = c.gameObject.GetComponent<PlayerController>();
+			player = c.gameObject.GetComponentInChildren<PlayerController>();
             player.topSpeed *= 2;
             player.accel *= 2;
             player.airControl *= 2;
