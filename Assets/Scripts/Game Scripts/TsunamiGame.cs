@@ -54,8 +54,12 @@ public class TsunamiGame : MonoBehaviour
 
 	public void OnDestroy()
 	{
+		Debug.Log ("ON DESTROY");
+		Debug.Log ("playerCount = " + Globals.playerCount);
 		// score for this minigame is based on (1) your final height (2) FixedUpdate frames spent underwater
-		for (int i = 0; i < Globals.playerCount; i++)
-			Globals.minigameScores[i] = (int)(500 * Globals.playerControllers[i].origin.position.y) - (Globals.playerChars[i].timeUnderwater);
+		for (int i = 0; i < Globals.playerCount; i++) {
+			Debug.Log ("player " + i);
+			Globals.minigameScores [i] = (int)(500 * Globals.playerControllers [i].origin.position.y) - (Globals.playerChars [i].timeUnderwater);
+		}
 	}
 }
