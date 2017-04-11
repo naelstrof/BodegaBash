@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject apple;
 	public ParticleSystem JumpDust;
 	public AudioClip jumpSound;
+	public AudioClip cartSound;
 	private Animator animator;
 
 	public bool onGround{ get; set; }

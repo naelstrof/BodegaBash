@@ -12,6 +12,7 @@ public class PlayerHurt : PlayerState {
 
     public override void Start (PlayerController player)
     {
+		Globals.SpawnSound (player.cartSound, player.transform.position);
 		player.character.SpillItems(1);
 		UnityEngine.Object.Instantiate(player.apple, player.transform.position, Quaternion.identity);
 		// Disable constraints.
