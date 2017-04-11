@@ -11,6 +11,10 @@ public class OnLoad : MonoBehaviour {
 	public GameObject TsunamiGame;
 	public GameObject EarthquakeGame;
 	public GameObject ChemicalGame;
+	public Material MAT_p1;
+	public Material MAT_p2;
+	public Material MAT_p3;
+	public Material MAT_p4;
 	float startTime;
 
 	// Use this for initialization
@@ -31,6 +35,8 @@ public class OnLoad : MonoBehaviour {
                 break;
         }
 
+		Material[] playerMats = {MAT_p1, MAT_p2, MAT_p3, MAT_p4};
+
         if (Globals.Shopping)
         {
             startTime = Time.time;
@@ -40,6 +46,13 @@ public class OnLoad : MonoBehaviour {
                 GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
                 GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
                 PlayerController PC = player.GetComponentInChildren<PlayerController>();
+
+				var playerShirtColor = player.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+				playerShirtColor[1] = playerMats[i];
+				Debug.Log (MAT_p4);
+				player.GetComponentInChildren<SkinnedMeshRenderer> ().materials = playerShirtColor;
+				Debug.Log (player.GetComponentInChildren<SkinnedMeshRenderer>().materials[1]);
+
                 PC.playerNum = i;
             }
             Globals.playerChars = new PlayerCharacter[4];
@@ -63,6 +76,7 @@ public class OnLoad : MonoBehaviour {
 				GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
 				GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
 				PlayerController PC = player.GetComponentInChildren<PlayerController>();
+
 				PC.playerNum = i;
 			}
 			Globals.clearListener();

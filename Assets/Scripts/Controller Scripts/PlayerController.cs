@@ -104,8 +104,9 @@ public class PlayerController : MonoBehaviour {
 		// separately keep track of our actual velocity ourselves.
 		currSpeed = (transform.position - lastPosition)/Time.deltaTime;
 		lastPosition = transform.position;
+
+		//Drive basic animations using the player's horizontal speed.
 		animator.SetFloat("runSpeed", (Mathf.Abs(currSpeed.x)+Math.Abs(currSpeed.z)+0.1f)*0.1f);
-		//animator.SetBool ("isRunning", onGround);
 	}
 
 	public void OnTriggerEnter( Collider obj ) {
