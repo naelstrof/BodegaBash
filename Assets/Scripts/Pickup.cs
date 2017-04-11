@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour {
 
     public int ID;
+	public ParticleSystem pickupParticles;
 	private GameObject Target;
 	private float SpeedUp;
 	// Use this for initialization
@@ -27,6 +28,7 @@ public class Pickup : MonoBehaviour {
 		SpeedUp += Time.deltaTime*5;
 		if (Vector3.Distance (transform.position, Target.transform.position) < 0.8f) {
 			Debug.Log ("picking up item #" + ID);
+			ParticleHandler.SpawnSparkles (gameObject, pickupParticles);
 			if (c.gameObject.tag == "Player") {
 				PlayerController p = c.gameObject.GetComponentInChildren<PlayerController>();
 				Globals.playerChars[p.playerNum].AddToCart(ID);

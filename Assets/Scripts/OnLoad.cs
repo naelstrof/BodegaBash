@@ -51,9 +51,8 @@ public class OnLoad : MonoBehaviour {
 
 				var playerShirtColor = player.GetComponentInChildren<SkinnedMeshRenderer>().materials;
 				playerShirtColor[1] = playerMats[i];
-				Debug.Log (MAT_p4);
 				player.GetComponentInChildren<SkinnedMeshRenderer> ().materials = playerShirtColor;
-				Debug.Log (player.GetComponentInChildren<SkinnedMeshRenderer>().materials[1]);
+				//Debug.Log (player.GetComponentInChildren<SkinnedMeshRenderer>().materials[1]);
 
                 PC.playerNum = i;
             }
@@ -78,6 +77,10 @@ public class OnLoad : MonoBehaviour {
 				GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
 				GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
 				PlayerController PC = player.GetComponentInChildren<PlayerController>();
+
+				var playerShirtColor = player.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+				playerShirtColor[1] = playerMats[i];
+				player.GetComponentInChildren<SkinnedMeshRenderer> ().materials = playerShirtColor;
 
 				PC.playerNum = i;
 			}

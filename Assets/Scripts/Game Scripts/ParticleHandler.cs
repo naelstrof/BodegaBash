@@ -29,6 +29,10 @@ public class ParticleHandler : MonoBehaviour {
 		jumpdustMain.startSpeed = startSpeed;
 		//Debug.Log ("dustSize = " + sizeMultiplier);
 	}
+
+	public static void SpawnSparkles(GameObject item, ParticleSystem sparkleParticles){
+		UnityEngine.Object.Instantiate(sparkleParticles, item.GetComponent<Transform>().position, Quaternion.identity);
+	}
 		
 	public static float Clamp(float num, float min, float max){
 		if (num < min)
