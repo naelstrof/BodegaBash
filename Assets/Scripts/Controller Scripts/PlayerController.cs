@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour {
 	public new GameObject camera;
 	public GameObject apple;
 	public ParticleSystem JumpDust;
+	//Sounds from here
 	public AudioClip jumpSound;
 	public AudioClip cartSound;
+	public AudioClip playerSigh;
+	//Animation
 	private Animator animator;
 
 	public bool onGround{ get; set; }
