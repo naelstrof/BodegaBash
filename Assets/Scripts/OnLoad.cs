@@ -40,10 +40,12 @@ public class OnLoad : MonoBehaviour {
         if (Globals.Shopping)
         {
             startTime = Time.time;
-            GameObject[] Spawns = GameObject.FindGameObjectsWithTag("Respawn");
+			ArrayList Spawns = new ArrayList (GameObject.FindGameObjectsWithTag ("Respawn"));
             for (int i = 0; i < Globals.playerCount; i++)
             {
-                GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
+				Debug.Assert (Spawns.Count > 0);
+				GameObject RandSpawn = (GameObject)Spawns[Random.Range(0, Spawns.Count)];
+				Spawns.Remove (RandSpawn);
                 GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
                 PlayerController PC = player.GetComponentInChildren<PlayerController>();
 
@@ -59,7 +61,7 @@ public class OnLoad : MonoBehaviour {
             Globals.shoppingScores = new int[4];
             Globals.minigameScores = new int[4];
             Globals.atGoal = new bool[4];
-            Globals.clearListener();
+			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
             // initialize the players in this round
             Globals.playerChars = new PlayerCharacter[Globals.playerCount];
@@ -79,7 +81,7 @@ public class OnLoad : MonoBehaviour {
 
 				PC.playerNum = i;
 			}
-			Globals.clearListener();
+			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
 			switch (Globals.Scenario) {
 			case 'T':

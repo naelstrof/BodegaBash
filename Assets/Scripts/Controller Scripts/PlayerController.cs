@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 	void Start ()
     {
         character = Globals.playerChars[playerNum];
-
+		currSpeed = Vector3.zero;
         body = GetComponent<Rigidbody>();
 		body.interpolation = RigidbodyInterpolation.Interpolate;
         currentState = new PlayerIdle();
@@ -115,40 +115,36 @@ public class PlayerController : MonoBehaviour {
 
 	public void OnTriggerEnter( Collider obj ) {
 		// If we collided with a player
-		if (obj.gameObject.tag == "Player") {
+		if (obj.gameObject.tag == "Player" ) {
 			// Try to determine who wins the "battle"
 			PlayerController p1 = obj.gameObject.GetComponentInChildren<PlayerController>();
 			PlayerController p2 = this;
-			if (Vector3.Distance (p1.transform.position, p2.transform.position) < 0.5) {
+			if (p2.GetStateType () == typeof(PlayerHurt)) {
+				return;
+			}
+			if (p1.GetStateType () == typeof(PlayerHurt)) {
 				return;
 			}
 		
 			float p1score = p1.currSpeed.magnitude;
 			float p2score = p2.currSpeed.magnitude;
 
-			Vector3 vec1 = p1.transform.eulerAngles;
-			Vector3 vec2 = Quaternion.LookRotation(p1.transform.position-p2.transform.position).eulerAngles;
-			float dot = Vector3.Dot(vec1,vec2);
-			dot = dot/(vec1.magnitude*vec2.magnitude);
-			float acos = Mathf.Acos(dot)*5;
-			p1score -= acos;
+			if (p1.GetStateType () == typeof(PlayerHurt)) {
+				p1score = 0;
+			}
+				
+			float wantedyaw = Quaternion.LookRotation(p2.transform.position-p1.transform.position).eulerAngles.y;
+			float realyaw = p1.transform.eulerAngles.y;
+			Debug.Log (wantedyaw + " " + realyaw);
+			p1score -= Mathf.Abs (wantedyaw - realyaw)/10f;
 
-			vec1 = p2.transform.eulerAngles;
-			vec2 = Quaternion.LookRotation(p2.transform.position-p1.transform.position).eulerAngles;
-			dot = Vector3.Dot(vec1,vec2);
-			dot = dot/(vec1.magnitude*vec2.magnitude);
-			acos = Mathf.Acos(dot)*5;
-			Debug.Log ("P1" + p1score);
-			Debug.Log ("P2" + p2score);
-			p2score -= acos;
+			wantedyaw = Quaternion.LookRotation(p1.transform.position-p2.transform.position).eulerAngles.y;
+			realyaw = p2.transform.eulerAngles.y;
+			p2score -= Mathf.Abs (wantedyaw - realyaw)/10f;
 			if (p1score > p2score) {
-				if (GetStateType () != typeof(PlayerHurt)) {
-					SwitchState (new PlayerHurt (p2.currSpeed + new Vector3 (0, p2.currSpeed.magnitude, 0)));
-				}
+				SwitchState (new PlayerHurt (p2.currSpeed + new Vector3 (0, p2.currSpeed.magnitude, 0)));
 			} else {
-				if (p1.GetStateType () != typeof(PlayerHurt)) {
-					p1.SwitchState (new PlayerHurt (p1.currSpeed + new Vector3 (0, p1.currSpeed.magnitude, 0)));
-				}
+				p1.SwitchState (new PlayerHurt (p1.currSpeed + new Vector3 (0, p1.currSpeed.magnitude, 0)));
 			}
 		}
 	}
