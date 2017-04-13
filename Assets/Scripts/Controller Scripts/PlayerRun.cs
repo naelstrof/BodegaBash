@@ -8,6 +8,7 @@ public class PlayerRun : PlayerState
 	public override void Start(PlayerController player)
 	{
 		player.speed = player.currSpeed.magnitude;
+		Globals.SpawnSound (player.footsteps, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)

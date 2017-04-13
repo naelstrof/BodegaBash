@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip jumpSound;
 	public AudioClip cartSound;
 	public AudioClip playerSigh;
+	public AudioClip grunt;
+	public AudioClip breeze;
+	public AudioClip jumpgrunt;
+	public AudioClip footsteps;
 	//Animation
 	private Animator animator;
 

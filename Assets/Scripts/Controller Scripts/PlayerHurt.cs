@@ -20,6 +20,8 @@ public class PlayerHurt : PlayerState {
 			Rigidbody r = item.GetComponent<Rigidbody> ();
 			r.velocity = new Vector3 (Random.Range (-20f, 20f), 10f, Random.Range (-20f, 20f));
 		}
+		Globals.SpawnSound (player.grunt, player.transform.position);
+	
 		// Disable constraints.
 		player.body.constraints = RigidbodyConstraints.None;
 		// Force push

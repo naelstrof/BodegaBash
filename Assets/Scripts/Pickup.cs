@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour {
 
     public int ID;
 	public ParticleSystem pickupParticles;
+	public AudioClip genitempick;
 	private GameObject Target;
 	private float SpeedUp;
 	private float cooldown = 2f;
@@ -40,6 +41,7 @@ public class Pickup : MonoBehaviour {
 		if (c.gameObject.tag == "Player") {
 			Target = c.gameObject;
 			SpeedUp = 1;
+			Globals.SpawnSound (genitempick, transform.position);
 		}
 	}
 	void OnTriggerStay( Collider c ) {
