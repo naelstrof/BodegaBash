@@ -27,18 +27,12 @@ public static class Globals
     public const string CAT_NEUT = "neutralizaer";      // chemical neutralizing soln   Ch
     public const string CAT_ABSRB = "absorbant";        // absorbant material for chem  Ch
 
-	private static AudioListener getListener() {
-		if (listener == null) {
-			listener = GameObject.FindObjectOfType<AudioListener> ();
-		}
-		return listener;
+	public static void setListener(AudioListener a) {
+		listener = a;
 	}
 
-	public static void clearListener() {
-		listener = null;
-	}
 
-	public static void SpawnSound( AudioClip clip, Vector3 position ) {
+	public static void SpawnSound( AudioClip clip, Vector3 position, float volume = 1 ) {
 		// Find the closest player to the sound source
 		GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
 		GameObject closestPlayer = Players [0];
@@ -50,10 +44,9 @@ public static class Globals
 				closestPlayer = p;
 			}
 		}
-
 		// Once we find the closest player, we transform the position to be relative to the audio listener.
 		position = closestPlayer.transform.InverseTransformPoint( position );
-		position = getListener().transform.TransformPoint (position);
-		AudioSource.PlayClipAtPoint(clip, position);
+		position = listener.transform.TransformPoint(position);
+		AudioSource.PlayClipAtPoint(clip, position, volume);
 	}
 }

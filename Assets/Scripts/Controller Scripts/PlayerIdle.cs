@@ -2,13 +2,19 @@
 using System.Collections;
 
 public class PlayerIdle : PlayerState {
+	private float Timer;
 
     public override void Start (PlayerController player)
-    {
+	{
+		Timer = 0;
 	}
 
     public override void Update (PlayerController player)
     {
+		Timer += Time.deltaTime;
+		if (Timer == 5) {
+			Globals.SpawnSound (player.playerSigh, player.transform.position);
+		}
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}

@@ -11,6 +11,10 @@ public class OnLoad : MonoBehaviour {
 	public GameObject TsunamiGame;
 	public GameObject EarthquakeGame;
 	public GameObject ChemicalGame;
+	public Material MAT_p1;
+	public Material MAT_p2;
+	public Material MAT_p3;
+	public Material MAT_p4;
 	float startTime;
 
 	// Use this for initialization
@@ -31,22 +35,32 @@ public class OnLoad : MonoBehaviour {
                 break;
         }
 
+		Material[] playerMats = {MAT_p1, MAT_p2, MAT_p3, MAT_p4};
+
         if (Globals.Shopping)
         {
             startTime = Time.time;
-            GameObject[] Spawns = GameObject.FindGameObjectsWithTag("Respawn");
+			ArrayList Spawns = new ArrayList (GameObject.FindGameObjectsWithTag ("Respawn"));
             for (int i = 0; i < Globals.playerCount; i++)
             {
-                GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
+				Debug.Assert (Spawns.Count > 0);
+				GameObject RandSpawn = (GameObject)Spawns[Random.Range(0, Spawns.Count)];
+				Spawns.Remove (RandSpawn);
                 GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
                 PlayerController PC = player.GetComponentInChildren<PlayerController>();
+
+				var playerShirtColor = player.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+				playerShirtColor[1] = playerMats[i];
+				player.GetComponentInChildren<SkinnedMeshRenderer> ().materials = playerShirtColor;
+				//Debug.Log (player.GetComponentInChildren<SkinnedMeshRenderer>().materials[1]);
+
                 PC.playerNum = i;
             }
             Globals.playerChars = new PlayerCharacter[4];
             Globals.shoppingScores = new int[4];
             Globals.minigameScores = new int[4];
             Globals.atGoal = new bool[4];
-            Globals.clearListener();
+			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
             // initialize the players in this round
             Globals.playerChars = new PlayerCharacter[Globals.playerCount];
@@ -63,9 +77,14 @@ public class OnLoad : MonoBehaviour {
 				GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
 				GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
 				PlayerController PC = player.GetComponentInChildren<PlayerController>();
+
+				var playerShirtColor = player.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+				playerShirtColor[1] = playerMats[i];
+				player.GetComponentInChildren<SkinnedMeshRenderer> ().materials = playerShirtColor;
+
 				PC.playerNum = i;
 			}
-			Globals.clearListener();
+			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
 			switch (Globals.Scenario) {
 			case 'T':

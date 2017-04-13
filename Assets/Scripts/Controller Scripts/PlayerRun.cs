@@ -8,6 +8,7 @@ public class PlayerRun : PlayerState
 	public override void Start(PlayerController player)
 	{
 		player.speed = player.currSpeed.magnitude;
+		Globals.SpawnSound (player.footsteps, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)
@@ -47,8 +48,10 @@ public class PlayerRun : PlayerState
 		RaycastHit hit;
 		//Debug.DrawRay(player.origin.position,player.origin.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.origin.forward, out hit, 0.7f)) {
-			if (player.currSpeed.magnitude >= player.topSpeed-10) {
-				player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3(0,5,0)));
+			if (hit.collider.gameObject.tag != "StoreItem") {
+				if (player.currSpeed.magnitude >= player.topSpeed - 10) {
+					player.SwitchState (new PlayerHurt (hit.normal * 20 + new Vector3 (0, 5, 0)));
+				}
 			}
 		}
 		//float vert = Input.GetAxis("Vertical");

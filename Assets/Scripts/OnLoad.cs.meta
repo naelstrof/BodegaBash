@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: c5fe0a1bec93b4fa991b92df96a109cc
-timeCreated: 1490047532
-licenseType: Free
+timeCreated: 1491948856
+licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Player: {instanceID: 0}
+  - TsunamiGame: {instanceID: 0}
+  - EarthquakeGame: {instanceID: 0}
+  - ChemicalGame: {instanceID: 0}
+  - MAT_p1: {fileID: 2100000, guid: fbe642b01244fb449a2d5f0d650d5933, type: 2}
+  - MAT_p2: {fileID: 2100000, guid: 6c1037ba492d940849b37e4a25daa1bf, type: 2}
+  - MAT_p3: {fileID: 2100000, guid: 6f64353784c0049eebbe8fe6174cc472, type: 2}
+  - MAT_p4: {fileID: 2100000, guid: fc7c91c6fe7ad4fb7974e58834472f92, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
