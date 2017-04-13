@@ -5,7 +5,7 @@ using UnityEngine;
 public class VictimScript : MonoBehaviour
 {
 
-    PlayerCharacter player;
+    PlayerController player;
     public bool contaminated;
     public float aggroRange;
 
@@ -13,7 +13,7 @@ public class VictimScript : MonoBehaviour
     void Start()
     {
         contaminated = false;
-        aggroRange = 5f;
+        aggroRange = 100f;
     }
 
     // Update is called once per frame
@@ -28,8 +28,8 @@ public class VictimScript : MonoBehaviour
 
             // get the position and distance of every player within the aggro range
             for (int i = 0; i < Globals.playerCount; i++)
-                if (Vector3.Distance(Globals.playerScripts[i].origin.position, transform.position) < aggroRange)
-                    cands.Add(Globals.playerScripts[i].origin.position, Vector3.Distance(Globals.playerScripts[i].origin.position, transform.position));
+                if (Vector3.Distance(Globals.playerControllers[i].origin.position, transform.position) < aggroRange)
+                    cands.Add(Globals.playerControllers[i].origin.position, Vector3.Distance(Globals.playerControllers[i].origin.position, transform.position));
 
             // select the position of the closest player...
             foreach (KeyValuePair<Vector3, float> kvp in cands)
@@ -42,6 +42,14 @@ public class VictimScript : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision c)
+    {
+        if (contaminated)
+            if (c.gameObject.tag == "Player")
+                c.gameObject.GetComponent<PlayerController>().character.contaminated = true;
+    }
+
+
     /// <summary>
     /// This should be called from the PlayerController script,
     /// in response to an Interaction input with this victim.
@@ -53,6 +61,5 @@ public class VictimScript : MonoBehaviour
         contaminated = false;
         Globals.playerChars[_pNum].aidGiven++;
     }
-
 
 }

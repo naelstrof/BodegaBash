@@ -12,16 +12,38 @@ public class PlayerRun : PlayerState
 
 	public override void Update(PlayerController player)
 	{
+		float run = Input.GetAxis ("Run" + player.playerNum);
+		float back = Input.GetAxis ("Back" + player.playerNum);
+		if ( run < 0 ) { run = 0; }
+		if (back < 0) {
+			back = 0;
+		}
 		if (!player.onGround) {
 			player.SwitchState (new PlayerAirborne ());
 		}
 		if (Input.GetButton ("Jump"+player.playerNum) && player.onGround) {
 			player.SwitchState (new PlayerJumpSquat ());
 		}
-		if (Input.GetAxis("Run"+player.playerNum) <= 0) {
+		if (run <= 0 && back <= 0) {
 			player.SwitchState (new PlayerIdle());
 		}
-		player.speed = Mathf.Clamp (player.speed + player.accel * Input.GetAxis("Run"+player.playerNum), 0, player.topSpeed);
+		if (back + run == 2) {
+			if (player.speed != 0) {
+				if (player.speed > 0) {
+					player.speed -= player.accel;
+					if (player.speed < 0) {
+						player.speed = 0;
+					}
+				} else {
+					player.speed += player.accel;
+					if (player.speed > 0) {
+						player.speed = 0;
+					}
+				}
+			}
+		} else {
+			player.speed = Mathf.Clamp (player.speed + player.accel * run - player.accel * back, -player.topSpeed * back / 2f, player.topSpeed * run);
+		}
 		RaycastHit hit;
 		//Debug.DrawRay(player.origin.position,player.origin.forward,Color.red,0.7f,false);
 		if (Physics.Raycast (player.origin.position, player.origin.forward, out hit, 0.7f)) {
@@ -31,14 +53,13 @@ public class PlayerRun : PlayerState
 		}
 		//float vert = Input.GetAxis("Vertical");
 		float horz = Input.GetAxis("Horizontal"+player.playerNum);
-		player.transform.Rotate (new Vector3 (0, horz*player.turningSpeed, 0));
-		Vector3 old = player.body.velocity;
-		if (player.onGround) {
-			player.body.velocity = player.transform.forward * player.speed + new Vector3 (0, old.y, 0);
+		if (player.speed > 0) {
+			player.transform.Rotate (new Vector3 (0, horz * player.turningSpeed * run, 0));
 		} else {
-			Vector3 desiredvel = player.transform.forward * player.speed + new Vector3 (0, old.y, 0);
-			player.body.velocity = desiredvel * player.airControl + old * (1 - player.airControl);
+			player.transform.Rotate (new Vector3 (0, horz * player.turningSpeed * back, 0));
 		}
+		Vector3 old = player.body.velocity;
+		player.body.velocity = player.transform.forward * player.speed + new Vector3 (0, old.y, 0);
 	}
 
 	public override void End(PlayerController player)

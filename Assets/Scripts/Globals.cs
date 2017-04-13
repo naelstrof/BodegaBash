@@ -8,10 +8,13 @@ public static class Globals
 	public static int playerCount = 1;
 	public static int[] shoppingScores = new int[4];
     public static int[] minigameScores = new int[4];
+    public static bool[] atGoal = new bool[4];
     public static PlayerCharacter[] playerChars = new PlayerCharacter[4];
-    public static PlayerController[] playerScripts = new PlayerController[4];
+    public static PlayerController[] playerControllers = new PlayerController[4];
     public static char Scenario = ' ';  // 'T' for tsunami  // 'E' for earthquake   // 'C' for chemical spill
-    public static bool Shopping = true;
+    public static bool Shopping = false;
+	public static int shoppingTimer = 60;
+    public static int minigameTimer = 60;
 
     // ITEM CATEGORIES
     public const string CAT_FOOD = "food";              // food and water
@@ -51,8 +54,6 @@ public static class Globals
 		// Once we find the closest player, we transform the position to be relative to the audio listener.
 		position = closestPlayer.transform.InverseTransformPoint( position );
 		position = getListener().transform.TransformPoint (position);
-		Debug.Log (getListener().transform.position);
-		Debug.Log (position);
 		AudioSource.PlayClipAtPoint(clip, position);
 	}
 }

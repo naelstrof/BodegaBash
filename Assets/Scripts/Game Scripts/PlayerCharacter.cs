@@ -27,11 +27,12 @@ public class PlayerCharacter
                                         //   a stack of item ID's.  when a player loses
                                         //   items for whatever reason, they lose the most
                                         //   recent items they picked up.
+	public int encumbrance;
+	public int maxEncumbrance;
 
     // MINIGAME STATS
-    int health;         // hitpoints - when you run out,
-                        //   you're done until the next shopping round
-    int maxHealth;
+    int health;         // current hitpoints
+    int maxHealth;		// maximum hitpoints
     int heals;          // number of heals allowed in the minigame round
         
                         //                                  TSUNAMI         EARTHQUAKE      CHEMSPILL
@@ -45,7 +46,6 @@ public class PlayerCharacter
     public int RsrcB { get { return rsrcB; } }
     public int RsrcC { get { return rsrcC; } }
 
-    public bool underwater;
     public int timeUnderwater;
 
     public int healthLost;
@@ -73,6 +73,8 @@ public class PlayerCharacter
 
         cart = new Dictionary<int, int>();
         recentitems = new Stack<int>();
+		encumbrance = 0;
+		maxEncumbrance = 70 + skillz * 10;
 
         maxHealth = 999;        // "marked" with 999 to help with errors I guess
         health = maxHealth;
@@ -89,23 +91,22 @@ public class PlayerCharacter
     /// Adds an item to the player's cart, or increments that
     /// item's quantity if it is already in the cart.
     /// 
-    /// If the pickup displaces an item based on rank and category,
-    /// this method returns that item's ID as an integer.  Otherwise,
-    /// this method return zero.
     /// </summary>
     /// <param name="_itemID"></param>
     /// <returns>an item ID, or zero</returns>
-    public int AddToCart(int _itemID)
+	public bool AddToCart(int _itemID)
     {
-        int outitem = 0;
-        // update the cart and recentitems
-        if (cart.ContainsKey(_itemID))
-            cart[_itemID]++;
-        else
-            cart.Add(_itemID, 1);
-        recentitems.Push(_itemID);
-
-        return outitem;
+		if (ItemTable.Defs [_itemID].Rank <= maxEncumbrance - encumbrance) {			
+			// update the cart and recentitems
+			if (cart.ContainsKey (_itemID))
+				cart [_itemID]++;
+			else
+				cart.Add (_itemID, 1);
+			recentitems.Push (_itemID);
+			encumbrance += ItemTable.Defs [_itemID].Rank;
+			return true;
+		}
+		return false;
     }
 
     /// <summary>
@@ -118,6 +119,7 @@ public class PlayerCharacter
         // update the cart
         if (--cart[_itemID] <= 0)       // decrement then check; if none left, remove altogether
             cart.Remove(_itemID);       // unnecessary?
+		encumbrance -= ItemTable.Defs[_itemID].Rank;
         return _itemID;
     }
 

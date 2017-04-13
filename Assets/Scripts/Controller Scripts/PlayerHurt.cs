@@ -12,6 +12,8 @@ public class PlayerHurt : PlayerState {
 
     public override void Start (PlayerController player)
     {
+		player.character.SpillItems(1);
+		UnityEngine.Object.Instantiate(player.apple, player.transform.position, Quaternion.identity);
 		// Disable constraints.
 		player.body.constraints = RigidbodyConstraints.None;
 		// Force push
