@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ParticleHandler : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 		
@@ -31,7 +30,9 @@ public class ParticleHandler : MonoBehaviour {
 	}
 
 	public static void SpawnSparkles(GameObject item, ParticleSystem sparkleParticles){
-		UnityEngine.Object.Instantiate(sparkleParticles, item.GetComponent<Transform>().position, Quaternion.identity);
+		ParticleSystem sparkles = UnityEngine.Object.Instantiate(sparkleParticles, item.GetComponent<Transform>().position, Quaternion.identity);
+		Material itemTypeMat = sparkles.GetComponent<ParticleList> ().particle1;
+		sparkles.GetComponent<ParticleSystemRenderer> ().material = itemTypeMat;
 	}
 		
 	public static float Clamp(float num, float min, float max){

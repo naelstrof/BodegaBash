@@ -6,6 +6,7 @@ public class PlayerAirborne : PlayerState {
 	private Quaternion desiredRotation;
 	public override void Start(PlayerController player)
 	{
+		Globals.SpawnSound (player.breeze, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)
