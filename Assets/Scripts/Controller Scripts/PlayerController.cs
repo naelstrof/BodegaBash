@@ -137,14 +137,16 @@ public class PlayerController : MonoBehaviour {
 			float realyaw = p1.transform.eulerAngles.y;
 			Debug.Log (wantedyaw + " " + realyaw);
 			p1score -= Mathf.Abs (wantedyaw - realyaw)/10f;
+			p1score *= p1.character.weight;
 
 			wantedyaw = Quaternion.LookRotation(p1.transform.position-p2.transform.position).eulerAngles.y;
 			realyaw = p2.transform.eulerAngles.y;
 			p2score -= Mathf.Abs (wantedyaw - realyaw)/10f;
+			p2score *= p2.character.weight;
 			if (p1score > p2score) {
-				SwitchState (new PlayerHurt (p2.currSpeed + new Vector3 (0, p2.currSpeed.magnitude, 0)));
+				SwitchState (new PlayerHurt ((p1.currSpeed + new Vector3 (0, p1.currSpeed.magnitude, 0))*(float)(p1.character.weight)));
 			} else {
-				p1.SwitchState (new PlayerHurt (p1.currSpeed + new Vector3 (0, p1.currSpeed.magnitude, 0)));
+				p1.SwitchState (new PlayerHurt ((p2.currSpeed + new Vector3 (0, p2.currSpeed.magnitude, 0))*(float)(p2.character.weight)));
 			}
 		}
 	}

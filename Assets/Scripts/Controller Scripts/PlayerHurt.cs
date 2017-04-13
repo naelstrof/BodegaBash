@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHurt : PlayerState {
 	private float timer;
@@ -13,8 +14,12 @@ public class PlayerHurt : PlayerState {
     public override void Start (PlayerController player)
     {
 		Globals.SpawnSound (player.cartSound, player.transform.position);
-		player.character.SpillItems(1);
-		UnityEngine.Object.Instantiate(player.apple, player.transform.position, Quaternion.identity);
+		List<int> items = player.character.SpillItems(1);
+		foreach( int i in items ) {
+			GameObject item = UnityEngine.Object.Instantiate(player.apple, player.origin.transform.position+new Vector3(0,1f,0), Quaternion.identity);
+			Rigidbody r = item.GetComponent<Rigidbody> ();
+			r.velocity = new Vector3 (Random.Range (-20f, 20f), 10f, Random.Range (-20f, 20f));
+		}
 		// Disable constraints.
 		player.body.constraints = RigidbodyConstraints.None;
 		// Force push

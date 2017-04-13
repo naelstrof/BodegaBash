@@ -9,12 +9,12 @@ public class PlayerCharacter
     public bool Alive { get { return alive; } }
 
     // MOVEMENT & HANDLING
-    int speed;          // determines top movement speed
+    public int speed = 1;          // determines top movement speed
                         //   narrow range (45-55 mph?)
-    int accel;          // determines rate of change of direction
-    int weight;         // strong influence on outcome of player impacts
+	public int accel = 1;          // determines rate of change of direction
+	public int weight = 1;         // strong influence on outcome of player impacts
                         //   (slight influence on controls)
-    int skillz;         // influence on difficulty of moves
+	public int skillz = 1;         // influence on difficulty of moves
                         //   (wall jump frames, etc)
 
     // SHOPPING-RELATED
