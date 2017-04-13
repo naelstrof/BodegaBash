@@ -15,16 +15,12 @@ public class ChemicalGame : MonoBehaviour
 	bool deathFinish;
 	bool timerFinish;
 
-	//sounds
-	public AudioClip chemicalamb;
-
 	PlayerController ps;
 	PlayerCharacter pc;
 
 	public void Start()
 	{
 		t0 = Time.time;
-		Globals.SpawnSound (player.chemicalamb, player.transform.position);
 
 		victims = GameObject.FindGameObjectsWithTag("Victim");
 		if (victims.Length == 0)
