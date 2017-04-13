@@ -15,11 +15,14 @@ public class PlayerHurt : PlayerState {
     {
 		Globals.SpawnSound (player.cartSound, player.transform.position);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (player.character != null) {
 			player.character.SpillItems (1);
 		}
 		UnityEngine.Object.Instantiate(player.apple, player.transform.position, Quaternion.identity);
 =======
+=======
+>>>>>>> origin/master
 		List<int> items = player.character.SpillItems(1);
 		foreach( int i in items ) {
 			GameObject item = UnityEngine.Object.Instantiate(player.apple, player.origin.transform.position+new Vector3(0,1f,0), Quaternion.identity);
@@ -28,6 +31,9 @@ public class PlayerHurt : PlayerState {
 		}
 		Globals.SpawnSound (player.grunt, player.transform.position);
 	
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 		// Disable constraints.
 		player.body.constraints = RigidbodyConstraints.None;
