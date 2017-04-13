@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour {
 
     public int ID;
 	public ParticleSystem pickupParticles;
+	public AudioClip genitempick;
 	private GameObject Target;
 	private float SpeedUp;
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class Pickup : MonoBehaviour {
     }
 
 	void OnTriggerEnter (Collider c) {
+		Globals.SpawnSound (genitempick, transform.position);
 		SpeedUp = 1;
 		Target = c.gameObject;
 	}
