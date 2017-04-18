@@ -20,6 +20,9 @@ ModelImporter:
     100024: supply_radioSet_GEO
     100026: supply_rechargeableBatteries_GEO
     100028: supply_sweater_GEO
+    100030: supply_emergencyRaft_GEO
+    100032: supply_noodles_GEO
+    100034: supply_poolTube_GEO
     400000: //RootNode
     400002: powerup_GEO
     400004: supply_apple_GEO
@@ -35,6 +38,9 @@ ModelImporter:
     400024: supply_radioSet_GEO
     400026: supply_rechargeableBatteries_GEO
     400028: supply_sweater_GEO
+    400030: supply_emergencyRaft_GEO
+    400032: supply_noodles_GEO
+    400034: supply_poolTube_GEO
     2300000: powerup_GEO
     2300002: supply_apple_GEO
     2300004: supply_solidFood_GEO
@@ -49,6 +55,9 @@ ModelImporter:
     2300022: supply_radioSet_GEO
     2300024: supply_rechargeableBatteries_GEO
     2300026: supply_sweater_GEO
+    2300028: supply_emergencyRaft_GEO
+    2300030: supply_noodles_GEO
+    2300032: supply_poolTube_GEO
     3300000: powerup_GEO
     3300002: supply_apple_GEO
     3300004: supply_solidFood_GEO
@@ -63,6 +72,9 @@ ModelImporter:
     3300022: supply_radioSet_GEO
     3300024: supply_rechargeableBatteries_GEO
     3300026: supply_sweater_GEO
+    3300028: supply_emergencyRaft_GEO
+    3300030: supply_noodles_GEO
+    3300032: supply_poolTube_GEO
     4300000: powerup_GEO
     4300002: supply_apple_GEO
     4300004: supply_solidFood_GEO
@@ -77,6 +89,9 @@ ModelImporter:
     4300022: supply_radioSet_GEO
     4300024: supply_rechargeableBatteries_GEO
     4300026: supply_generator_GEO
+    4300028: supply_noodles_GEO
+    4300030: supply_poolTube_GEO
+    4300032: supply_emergencyRaft_GEO
   materials:
     importMaterials: 1
     materialName: 0
