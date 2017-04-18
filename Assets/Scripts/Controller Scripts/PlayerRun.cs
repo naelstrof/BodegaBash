@@ -3,16 +3,17 @@ using System.Collections;
 
 public class PlayerRun : PlayerState
 {
-
+	private AudioSource runningSound;
 
 	public override void Start(PlayerController player)
 	{
 		player.speed = player.currSpeed.magnitude;
-		Globals.SpawnSound (player.footsteps, player.transform.position);
+		runningSound = Globals.StartSound ( player.footsteps, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)
 	{
+		Globals.UpdateSoundPosition (runningSound, player.transform.position);
 		float run = Input.GetAxis ("Run" + player.playerNum);
 		float back = Input.GetAxis ("Back" + player.playerNum);
 		if ( run < 0 ) { run = 0; }
@@ -67,7 +68,7 @@ public class PlayerRun : PlayerState
 
 	public override void End(PlayerController player)
 	{
-
+		Globals.StopSound (runningSound);
 	}
 }
 

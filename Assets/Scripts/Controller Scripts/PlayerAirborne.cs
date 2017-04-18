@@ -4,13 +4,15 @@ using System.Collections;
 // Airborne state, if the player is in the air, he should be in this state.
 public class PlayerAirborne : PlayerState {
 	private Quaternion desiredRotation;
+	private AudioSource flyingSound;
 	public override void Start(PlayerController player)
 	{
-		Globals.SpawnSound (player.breeze, player.transform.position);
+		flyingSound = Globals.StartSound (player.breeze, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)
 	{
+		Globals.UpdateSoundPosition (flyingSound, player.transform.position);
 		Vector3 old = player.body.velocity;
 		// If the player is on the ground, we switch to an Idle state.
 		// We also do some sanity checking with the old.y<=0, if we're 'airborne' but not moving up or down--
@@ -49,6 +51,8 @@ public class PlayerAirborne : PlayerState {
 
 	public override void End(PlayerController player)
 	{
+		Globals.StopSound (flyingSound);
+		Globals.SpawnSound (player.landing, player.transform.position);
 	}
 		
 }

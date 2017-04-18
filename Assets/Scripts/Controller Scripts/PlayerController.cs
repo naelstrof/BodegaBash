@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip breeze;
 	public AudioClip jumpgrunt;
 	public AudioClip footsteps;
+	public AudioClip landing;
 	//Animation
 	private Animator animator;
 

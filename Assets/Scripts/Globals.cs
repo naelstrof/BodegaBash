@@ -31,6 +31,51 @@ public static class Globals
 		listener = a;
 	}
 
+	public static AudioSource StartSound(AudioClip clip, Vector3 position, float volume = 1 ) {
+		// Find the closest player to the sound source
+		GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject closestPlayer = Players [0];
+		float closestDistance = 999999999999;
+		foreach (GameObject p in Players) {
+			float d = Vector3.Distance (p.transform.position, position);
+			if (d < closestDistance) {
+				closestDistance = d;
+				closestPlayer = p;
+			}
+		}
+		// Once we find the closest player, we transform the position to be relative to the audio listener.
+		position = closestPlayer.transform.InverseTransformPoint( position );
+		position = listener.transform.TransformPoint(position);
+		GameObject root = new GameObject();
+		AudioSource blah = root.AddComponent(typeof(AudioSource)) as AudioSource;
+		root.transform.position = position;
+		blah.clip = clip;
+		blah.loop = true;
+		blah.volume = volume;
+		blah.Play ();
+		return blah;
+	}
+
+	public static void UpdateSoundPosition( AudioSource blah, Vector3 position ) {
+		GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject closestPlayer = Players [0];
+		float closestDistance = 999999999999;
+		foreach (GameObject p in Players) {
+			float d = Vector3.Distance (p.transform.position, position);
+			if (d < closestDistance) {
+				closestDistance = d;
+				closestPlayer = p;
+			}
+		}
+		// Once we find the closest player, we transform the position to be relative to the audio listener.
+		position = closestPlayer.transform.InverseTransformPoint( position );
+		position = listener.transform.TransformPoint(position);
+		blah.gameObject.transform.position = position;
+	}
+
+	public static void StopSound( AudioSource blah ) {
+		Object.Destroy (blah.gameObject);
+	}
 
 	public static void SpawnSound( AudioClip clip, Vector3 position, float volume = 1 ) {
 		// Find the closest player to the sound source

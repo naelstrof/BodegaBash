@@ -6,6 +6,7 @@ public class PlayerJumpSquat : PlayerState {
 	private Vector3 direction;
 	public override void Start(PlayerController player)
 	{
+		//Globals.SpawnSound (player.jumpgrunt, player.transform.position);
 	}
 
 	public override void Update(PlayerController player)
@@ -22,7 +23,6 @@ public class PlayerJumpSquat : PlayerState {
 	public override void End(PlayerController player)
 	{
 		Globals.SpawnSound (player.jumpSound, player.transform.position);
-		Globals.SpawnSound (player.jumpgrunt, player.transform.position);
 		// Spawn a new jump dust object at the players feet
 		ParticleHandler.SpawnDust (player, "jumping", player.origin.up);
 		Vector3 old = player.body.velocity;

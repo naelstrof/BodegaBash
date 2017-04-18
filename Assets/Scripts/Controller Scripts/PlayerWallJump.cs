@@ -12,6 +12,7 @@ public class PlayerWallJump : PlayerState {
 
 	public override void Start(PlayerController player)
 	{
+		Globals.SpawnSound (player.jumpgrunt, player.transform.position);
 		normal.y = 0;
 		player.transform.rotation = Quaternion.LookRotation (normal);
 		player.body.constraints = RigidbodyConstraints.FreezeAll;
@@ -31,6 +32,7 @@ public class PlayerWallJump : PlayerState {
 
 	public override void End(PlayerController player)
 	{
+		Globals.SpawnSound (player.jumpSound, player.transform.position);
 		player.body.constraints = RigidbodyConstraints.FreezeRotation;
 		direction.Scale (normal);
 		ParticleHandler.SpawnDust (player, "jumping", normal);

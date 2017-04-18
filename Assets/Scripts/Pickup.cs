@@ -32,7 +32,9 @@ public class Pickup : MonoBehaviour {
 			return;
 		}
 		if (collision.gameObject.tag == "Player") {
-			Debug.Log ("HIT" + cooldown);
+			//Debug.Log ("HIT" + cooldown);
+			Globals.SpawnSound (genitempick, collision.gameObject.transform.position);
+			ParticleHandler.SpawnSparkles (gameObject, pickupParticles);
 			PlayerController p = collision.gameObject.GetComponentInChildren<PlayerController> ();
 			HitPlayer (p);
 		}
@@ -41,7 +43,6 @@ public class Pickup : MonoBehaviour {
 		if (c.gameObject.tag == "Player") {
 			Target = c.gameObject;
 			SpeedUp = 1;
-			Globals.SpawnSound (genitempick, transform.position);
 		}
 	}
 	void OnTriggerStay( Collider c ) {
@@ -55,6 +56,7 @@ public class Pickup : MonoBehaviour {
 				Debug.Log ("picking up item #" + ID);
 				ParticleHandler.SpawnSparkles (gameObject, pickupParticles);
 				if (c.gameObject.tag == "Player") {
+					Globals.SpawnSound (genitempick, c.gameObject.transform.position);
 					PlayerController p = c.gameObject.GetComponentInChildren<PlayerController> ();
 					HitPlayer (p);
 				}
