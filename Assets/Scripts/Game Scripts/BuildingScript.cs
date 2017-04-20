@@ -16,7 +16,7 @@ public class BuildingScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // move the building downward and foward
+        // move the building foward
         transform.Translate(Vector3.right * 0.1f, Space.World);
     }
 

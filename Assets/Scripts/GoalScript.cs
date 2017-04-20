@@ -16,7 +16,7 @@ public class GoalScript : MonoBehaviour {
         for (int i = 0; i < Globals.atGoal.Length; i++)
             msg += ", " + Globals.atGoal[i];
         msg += "]";
-        Debug.Log(msg);
+        //Debug.Log(msg);
 
 	}
 

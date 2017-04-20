@@ -66,7 +66,7 @@ public class OnLoad : MonoBehaviour {
             Globals.shoppingScores = new int[Globals.playerCount];
             Globals.minigameScores = new int[Globals.playerCount];
             Globals.atGoal = new bool[Globals.playerCount];
-			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
+            Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
             // initialize the players in this round
             Globals.playerChars = new PlayerCharacter[Globals.playerCount];
@@ -123,10 +123,10 @@ public class OnLoad : MonoBehaviour {
 				SceneManager.LoadScene (6);
 			}
 		}
-		else
-		{
-			if (Time.time - startTime > Globals.minigameTimer)
-				SceneManager.LoadScene (10);
-		}
+		//else
+		//{
+		//	if (Time.time - startTime > Globals.minigameTimer)
+		//		SceneManager.LoadScene (10);
+		//}
 	}
 }

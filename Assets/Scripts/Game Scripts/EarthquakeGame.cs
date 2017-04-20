@@ -44,16 +44,29 @@ public class EarthquakeGame : MonoBehaviour {
 				goalFinish = false;
         }
 
+        string dlog = "";
+        if (timerFinish)
+            dlog += "timer ";
+        if (deathFinish)
+            dlog += "death ";
+        if (goalFinish)
+            dlog += "goal ";
+        Debug.Log(dlog);
+
 		// finish the game if the goal has been met, all players are dead, or the timer has expired
 		if (goalFinish || deathFinish || timerFinish)
-			OnDestroy();
+			FinishGame();
 
 	}
 
-	public void OnDestroy()
+	public void FinishGame()
 	{
 		// score for this minigame is based on (1) health remaining (2) health lost (3) heals used
 		for (int i = 0; i < Globals.playerCount; i++)
+        {
 			Globals.minigameScores[i] = 10000 + (2 * Globals.playerChars[i].Health) - (Globals.playerChars[i].healthLost) - (1000 * Globals.playerChars[i].healsUsed);
+            SceneManager.LoadScene(10);
+        }
+
 	}
 }

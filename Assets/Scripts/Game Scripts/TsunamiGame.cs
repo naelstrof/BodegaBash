@@ -43,8 +43,6 @@ public class TsunamiGame : MonoBehaviour
                 goalFinish = false;
         }
 
-        Debug.Log("timer: " + timerFinish + " death: " + deathFinish + " goal: " + goalFinish);
-
         // finish the game if the goal has been met, all players are dead, or the timer has expired
         if (goalFinish || deathFinish || timerFinish)
             FinishGame();
