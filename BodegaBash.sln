@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodegaBash", "Assembly-CSharp.csproj", "{06F611DD-6609-F4A9-8C16-DAFF34085595}"
+# Visual Studio 2008
+
+Project("{988863E6-213A-0EF6-52E1-4FAF73A2A4FE}") = "BodegaBash", "Assembly-CSharp.csproj", "{06F611DD-6609-F4A9-8C16-DAFF34085595}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
