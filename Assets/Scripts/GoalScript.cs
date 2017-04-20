@@ -11,7 +11,13 @@ public class GoalScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+
+        string msg = "[";	
+        for (int i = 0; i < Globals.atGoal.Length; i++)
+            msg += ", " + Globals.atGoal[i];
+        msg += "]";
+        Debug.Log(msg);
+
 	}
 
     void OnTriggerEnter(Collider c)

@@ -20,6 +20,13 @@ public class OnLoad : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        if (Globals.BBStartup)
+        {
+            Globals.BBStartup = false;
+            SceneManager.LoadScene(0);
+            return;
+        }
+
         sceneNum = SceneManager.GetActiveScene().buildIndex;
         switch(sceneNum)
         {
@@ -56,17 +63,20 @@ public class OnLoad : MonoBehaviour {
 
                 PC.playerNum = i;
             }
-            Globals.playerChars = new PlayerCharacter[4];
-            Globals.shoppingScores = new int[4];
-            Globals.minigameScores = new int[4];
-            Globals.atGoal = new bool[4];
+            Globals.shoppingScores = new int[Globals.playerCount];
+            Globals.minigameScores = new int[Globals.playerCount];
+            Globals.atGoal = new bool[Globals.playerCount];
 			Globals.setListener( this.GetComponentInChildren<AudioListener>() );
 
             // initialize the players in this round
             Globals.playerChars = new PlayerCharacter[Globals.playerCount];
+            Globals.playerControllers = new PlayerController[Globals.playerCount];
             // we could load in character choices as strings from an array filled during the character selection screen
             for (int i = 0; i < Globals.playerCount; i++)
+            {
                 Globals.playerChars[i] = new PlayerCharacter(CharacterTable.Defs["JOE DUDE"]);
+                Globals.playerControllers[i] = new PlayerController();
+            }
         }
         else
         {

@@ -80,6 +80,8 @@ public class PlayerCharacter
         health = maxHealth;
         heals = 3;
 
+        timeUnderwater = 0;
+
         rsrcA = 0;
         rsrcB = 0;
         rsrcC = 0;

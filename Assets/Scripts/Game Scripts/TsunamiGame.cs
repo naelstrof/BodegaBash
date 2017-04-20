@@ -43,17 +43,20 @@ public class TsunamiGame : MonoBehaviour
                 goalFinish = false;
         }
 
+        Debug.Log("timer: " + timerFinish + " death: " + deathFinish + " goal: " + goalFinish);
+
         // finish the game if the goal has been met, all players are dead, or the timer has expired
         if (goalFinish || deathFinish || timerFinish)
-            OnDestroy();
+            FinishGame();
 
 	}
 
-	public void OnDestroy()
+	public void FinishGame()
 	{
 		// score for this minigame is based on (1) your final height (2) FixedUpdate frames spent underwater
 		for (int i = 0; i < Globals.playerCount; i++) {
-			//Globals.minigameScores [i] = (int)(500 * Globals.playerControllers [i].origin.position.y) - (Globals.playerChars [i].timeUnderwater);
-		}
+            Globals.minigameScores[i] = 10000 - (Globals.playerChars[i].timeUnderwater);
+            SceneManager.LoadScene(10);
+        }
 	}
 }

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public static class Globals
 {
-	private static AudioListener listener = null;
+    public static bool BBStartup = true;
+
+    private static AudioListener listener = null;
 	public static int playerCount = 1;
-	public static int[] shoppingScores = new int[4];
-    public static int[] minigameScores = new int[4];
-    public static bool[] atGoal = new bool[4];
-    public static PlayerCharacter[] playerChars = new PlayerCharacter[4];
-    public static PlayerController[] playerControllers = new PlayerController[4];
+	public static int[] shoppingScores;
+    public static int[] minigameScores;
+    public static bool[] atGoal;
+    public static PlayerCharacter[] playerChars;
+    public static PlayerController[] playerControllers;
     public static char Scenario = ' ';  // 'T' for tsunami  // 'E' for earthquake   // 'C' for chemical spill
     public static bool Shopping = false;
-	public static int shoppingTimer = 60;
+	public static int shoppingTimer = 30;
     public static int minigameTimer = 60;
 
     // ITEM CATEGORIES
