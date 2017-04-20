@@ -17,31 +17,31 @@ public class EarthquakeGame : MonoBehaviour {
 
 	public void Start()
 	{
-		t0 = Time.time;
-		fires = GameObject.FindGameObjectsWithTag("Fire");
-		if (fires.Length == 0)
-			Debug.Log("There are no fires in the map (you may be loading the wrong minigame for this map)");
+        t0 = Time.time;
+		//fires = GameObject.FindGameObjectsWithTag("Fire");
+		//if (fires.Length == 0)
+		//	Debug.Log("There are no fires in the map (you may be loading the wrong minigame for this map)");
 	}
 
 	public void FixedUpdate()
 	{
-		// set flags - if any of them are NOT reset, then the round will end
-		timerFinish = true;
-		deathFinish = true;
-		goalFinish = true;
+        // set flags - if any of them are NOT reset, then the round will end
+        timerFinish = true;
+        deathFinish = true;
+        goalFinish = true;
 
-		// do NOT end the round early if there is time remaining
-		if ((Time.time - t0) < Globals.minigameTimer)
-			timerFinish = false;
+        // do NOT end the round early if there is time remaining
+        if ((Time.time - t0) < Globals.minigameTimer)
+            timerFinish = false;
 
-		for (int i = 0; i < Globals.playerCount; i++)
+        for (int i = 0; i < Globals.playerCount; i++)
         {
-    		// do NOT end the round early if there is some player still living
-			if (Globals.playerChars[i].Alive)
-				deathFinish = false;
-    		// do NOT end the round early if there is some player who hasn't reached the goal
-			if (Globals.playerChars[i].Alive && !Globals.atGoal[i])
-				goalFinish = false;
+            // do NOT end the round early if there is some player still living
+            if (Globals.playerChars[i].Alive)
+                deathFinish = false;
+            // do NOT end the round early if there is some player who hasn't reached the goal
+            if (Globals.playerChars[i].Alive && !Globals.atGoal[i])
+                goalFinish = false;
         }
 
         string dlog = "";
@@ -53,11 +53,10 @@ public class EarthquakeGame : MonoBehaviour {
             dlog += "goal ";
         Debug.Log(dlog);
 
-		// finish the game if the goal has been met, all players are dead, or the timer has expired
-		if (goalFinish || deathFinish || timerFinish)
-			FinishGame();
-
-	}
+        // finish the game if the goal has been met, all players are dead, or the timer has expired
+        if (goalFinish || deathFinish || timerFinish)
+            FinishGame();
+    }
 
 	public void FinishGame()
 	{

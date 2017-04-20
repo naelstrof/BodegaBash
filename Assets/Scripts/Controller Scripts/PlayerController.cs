@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 	public float shortJumpImpulse = 8;
 	public float jumpSquatTime = 7f / 60f;
 	public float airControl = 2;
-	public int playerNum = 0;
+	public int playerNum;
 	public new GameObject camera;
 	public GameObject apple;
 	public ParticleSystem JumpDust;
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour {
 				
 			float wantedyaw = Quaternion.LookRotation(p2.transform.position-p1.transform.position).eulerAngles.y;
 			float realyaw = p1.transform.eulerAngles.y;
-			Debug.Log (wantedyaw + " " + realyaw);
+			//Debug.Log (wantedyaw + " " + realyaw);
 			p1score -= Mathf.Abs (wantedyaw - realyaw)/10f;
 			p1score *= p1.character.weight;
 

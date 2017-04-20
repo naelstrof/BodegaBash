@@ -20,10 +20,12 @@ public class OnLoad : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        // navigate to the title screen if the game hasn't been set up
+        //  (useful for starting the game flow properly from a map open in Unity)
         if (Globals.BBStartup)
         {
             Globals.BBStartup = false;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(11);
             return;
         }
 

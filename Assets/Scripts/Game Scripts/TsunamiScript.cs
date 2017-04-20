@@ -15,7 +15,7 @@ public class TsunamiScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         // move the water plane
-        transform.Translate(Vector3.back * 0.25f, Space.World);
+        transform.Translate(Vector3.back * 0.15f, Space.World); // changed coeff from 0.25f
     }
 
 	void OnTriggerEnter(Collider c)
@@ -23,8 +23,8 @@ public class TsunamiScript : MonoBehaviour {
         if (c.gameObject.tag == "Player")
         {
 			player = c.gameObject.GetComponentInChildren<PlayerController>();
-            player.topSpeed *= 0.7f;
-            player.accel *= 0.1f;
+            player.topSpeed *= 0.8f;        // changed from 0.7f
+            player.accel *= 0.5f;           // changed from 0.1f
             player.airControl *= 0.7f;
             player.fullJumpImpulse *= 0.9f;
         }

@@ -16,7 +16,7 @@ public static class Globals
     public static char Scenario = ' ';  // 'T' for tsunami  // 'E' for earthquake   // 'C' for chemical spill
     public static bool Shopping = false;
 	public static int shoppingTimer = 5;
-    public static int minigameTimer = 10;
+    public static int minigameTimer = 120;
 
     // ITEM CATEGORIES
     public const string CAT_FOOD = "food";              // food and water

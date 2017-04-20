@@ -9,6 +9,10 @@ public class LoadOnClick : MonoBehaviour {
     {
         switch(sceneIndex)
         {
+            case 0:
+                Globals.BBStartup = false;
+                SceneManager.LoadScene(sceneIndex);
+                break;
             case 789:
                 Globals.Shopping = false;
                 switch (Globals.Scenario)
@@ -35,7 +39,7 @@ public class LoadOnClick : MonoBehaviour {
 		if ((disaster[0] == 'T') || (disaster[0] == 'E') || (disaster[0] == 'C'))
 			Globals.Scenario = (char)disaster[0];
         else
-            Debug.Log("ERROR :: invalid scenario code (must be in { T, E, C })");
+            Debug.Log("ERROR :: invalid scenario code (must be { T, E, C })");
     }
 
     public void SetPlayerCount( int num ) {
