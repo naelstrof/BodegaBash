@@ -25,6 +25,9 @@ ModelImporter:
     100034: supply_poolTube_GEO
     100036: supply_fireAxe_GEO
     100038: supply_fireBlanket_GEO
+    100040: supply_fireExtinguisher_GEO
+    100042: supply_motor_GEO
+    100044: supply_jerkyBag_GEO
     400000: //RootNode
     400002: powerup_GEO
     400004: supply_apple_GEO
@@ -45,6 +48,9 @@ ModelImporter:
     400034: supply_poolTube_GEO
     400036: supply_fireAxe_GEO
     400038: supply_fireBlanket_GEO
+    400040: supply_fireExtinguisher_GEO
+    400042: supply_motor_GEO
+    400044: supply_jerkyBag_GEO
     2300000: powerup_GEO
     2300002: supply_apple_GEO
     2300004: supply_solidFood_GEO
@@ -64,6 +70,9 @@ ModelImporter:
     2300032: supply_poolTube_GEO
     2300034: supply_fireAxe_GEO
     2300036: supply_fireBlanket_GEO
+    2300038: supply_fireExtinguisher_GEO
+    2300040: supply_motor_GEO
+    2300042: supply_jerkyBag_GEO
     3300000: powerup_GEO
     3300002: supply_apple_GEO
     3300004: supply_solidFood_GEO
@@ -83,6 +92,9 @@ ModelImporter:
     3300032: supply_poolTube_GEO
     3300034: supply_fireAxe_GEO
     3300036: supply_fireBlanket_GEO
+    3300038: supply_fireExtinguisher_GEO
+    3300040: supply_motor_GEO
+    3300042: supply_jerkyBag_GEO
     4300000: powerup_GEO
     4300002: supply_apple_GEO
     4300004: supply_solidFood_GEO
@@ -102,6 +114,9 @@ ModelImporter:
     4300032: supply_emergencyRaft_GEO
     4300034: supply_fireAxe_GEO
     4300036: supply_fireBlanket_GEO
+    4300038: supply_motor_GEO
+    4300040: supply_fireExtinguisher_GEO
+    4300042: supply_jerkyBag_GEO
   materials:
     importMaterials: 1
     materialName: 0
