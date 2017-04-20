@@ -31,7 +31,7 @@ public class ParticleHandler : MonoBehaviour {
 
 	public static void SpawnSparkles(GameObject item, ParticleSystem sparkleParticles){
 		ParticleSystem sparkles = UnityEngine.Object.Instantiate(sparkleParticles, item.GetComponent<Transform>().position, Quaternion.identity);
-		Material itemTypeMat = sparkles.GetComponent<ParticleList> ().particle1;
+		Material itemTypeMat = item.GetComponent<PickupParticle> ().particle;
 		sparkles.GetComponent<ParticleSystemRenderer> ().material = itemTypeMat;
 	}
 		
