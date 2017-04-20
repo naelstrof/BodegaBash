@@ -10,7 +10,7 @@ public class PlayerCharacter
 
     // MOVEMENT & HANDLING
     public int speed = 1;          // determines top movement speed
-                        //   narrow range (45-55 mph?)
+                                        //   narrow range (45-55 mph?)
 	public int accel = 1;          // determines rate of change of direction
 	public int weight = 1;         // strong influence on outcome of player impacts
                         //   (slight influence on controls)
@@ -324,5 +324,10 @@ public class PlayerCharacter
         if (!_self)
             aidGiven++;
         return true;
+    }
+
+    public void InstaKill()
+    {
+        alive = false;
     }
 }

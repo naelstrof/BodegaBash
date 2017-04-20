@@ -10,7 +10,6 @@ using UnityEngine.Scripting;
 public class TsunamiGame : MonoBehaviour
 {
 
-	GameObject tsunami;
 	float t0;
 	bool goalFinish;
 	bool deathFinish;
@@ -50,7 +49,7 @@ public class TsunamiGame : MonoBehaviour
             dlog += "death ";
         if (goalFinish)
             dlog += "goal ";
-        Debug.Log(dlog);
+        //Debug.Log(dlog);
 
         // finish the game if the goal has been met, all players are dead, or the timer has expired
         if (goalFinish || deathFinish || timerFinish)

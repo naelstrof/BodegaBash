@@ -9,7 +9,6 @@ using UnityEngine.Scripting;
 
 public class EarthquakeGame : MonoBehaviour {
 
-	GameObject[] fires;     // all fire objects in the map
 	float t0;
 	bool goalFinish;
 	bool deathFinish;
@@ -18,9 +17,6 @@ public class EarthquakeGame : MonoBehaviour {
 	public void Start()
 	{
         t0 = Time.time;
-		//fires = GameObject.FindGameObjectsWithTag("Fire");
-		//if (fires.Length == 0)
-		//	Debug.Log("There are no fires in the map (you may be loading the wrong minigame for this map)");
 	}
 
 	public void FixedUpdate()
@@ -51,7 +47,7 @@ public class EarthquakeGame : MonoBehaviour {
             dlog += "death ";
         if (goalFinish)
             dlog += "goal ";
-        Debug.Log(dlog);
+        //Debug.Log(dlog);
 
         // finish the game if the goal has been met, all players are dead, or the timer has expired
         if (goalFinish || deathFinish || timerFinish)
@@ -63,7 +59,7 @@ public class EarthquakeGame : MonoBehaviour {
 		// score for this minigame is based on (1) health remaining (2) health lost (3) heals used
 		for (int i = 0; i < Globals.playerCount; i++)
         {
-			Globals.minigameScores[i] = 10000 + (2 * Globals.playerChars[i].Health) - (Globals.playerChars[i].healthLost) - (1000 * Globals.playerChars[i].healsUsed);
+			Globals.minigameScores[i] = 10000 + (2 * Globals.playerChars[i].Health) - (10 * Globals.playerChars[i].healthLost) - (1000 * Globals.playerChars[i].healsUsed);
             SceneManager.LoadScene(10);
         }
 

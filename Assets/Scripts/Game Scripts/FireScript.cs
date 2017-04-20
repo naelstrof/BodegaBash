@@ -5,22 +5,23 @@ using UnityEngine;
 public class FireScript : MonoBehaviour {
 
     PlayerController player;
-    new SphereCollider collider; // ???
+    BoxCollider boxcollider; // ???
+    float growth = 0.02f;
 
 	// Use this for initialization
 	void Start () {
-        collider = GetComponent<SphereCollider>();
+        boxcollider = GetComponent<BoxCollider>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         // scale the flame's X and Z
-        transform.localScale += new Vector3(0.001f, 0, 0.001f);
+        transform.localScale += new Vector3(growth, 0, growth);
         // scale the collider's X and Z
-        collider.transform.localScale += new Vector3(0.001f, 0, 0.001f);
+        boxcollider.transform.localScale += new Vector3(growth, 0, growth);
 	}
 
-    void OnCollisionStay(Collision c)
+    void OnTriggerStay(Collider c)
     {
         if (c.gameObject.tag == "Player")
         {

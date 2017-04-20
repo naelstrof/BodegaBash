@@ -6,6 +6,7 @@ public class BuildingScript : MonoBehaviour
 {
 
     PlayerController player;
+    float move = 0.05f;
 
     // Use this for initialization
     void Start()
@@ -17,12 +18,12 @@ public class BuildingScript : MonoBehaviour
     void FixedUpdate()
     {
         // move the building foward
-        transform.Translate(Vector3.right * 0.1f, Space.World);
+        transform.Translate(Vector3.right * move, Space.World);
     }
 
     void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Player")
-            c.gameObject.GetComponent<PlayerController>().character.TakeDamage(99999);
+            c.gameObject.GetComponent<PlayerController>().character.InstaKill();
     }
 }

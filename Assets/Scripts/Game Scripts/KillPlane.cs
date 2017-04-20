@@ -14,14 +14,19 @@ public class KillPlane : MonoBehaviour {
 		GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
 		foreach ( GameObject p in Players ) {
 			if (p.transform.position.y < transform.position.y) {
-				GameObject[] Spawns = GameObject.FindGameObjectsWithTag("Respawn");
-				GameObject RandSpawn = Spawns [Random.Range (0, Spawns.Length)];
-				p.transform.position = RandSpawn.transform.position;
 				PlayerController pc = p.GetComponentInChildren<PlayerController>();
-				pc.SwitchState (new PlayerHurt (new Vector3(0, 0, 0)));
-				pc.body.velocity = new Vector3 (0, 0, 0);
-				GameObject c = pc.camera;
-				c.transform.position = RandSpawn.transform.position;
+                if (Globals.Shopping)
+                {
+                    GameObject[] Spawns = GameObject.FindGameObjectsWithTag("Respawn");
+                    GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
+                    p.transform.position = RandSpawn.transform.position;
+                    pc.SwitchState(new PlayerHurt(new Vector3(0, 0, 0)));
+                    pc.body.velocity = new Vector3(0, 0, 0);
+                    GameObject c = pc.camera;
+                    c.transform.position = RandSpawn.transform.position;
+                }
+                else
+                    pc.character.InstaKill();
 			}
 		}
 	}

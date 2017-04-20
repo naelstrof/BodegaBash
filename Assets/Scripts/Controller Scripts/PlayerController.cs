@@ -11,15 +11,15 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody body;
 	public Transform origin;
 	public float speed { get; set; }
-    public float topSpeed = 20;
-	public float walkingSpeed = 8;
+    public float topSpeed;
+	public float walkingSpeed;
 	public float turningSpeed;
 	public float accel;
 	public float jumpInfluence;
-	public float fullJumpImpulse = 16;
-	public float shortJumpImpulse = 8;
-	public float jumpSquatTime = 7f / 60f;
-	public float airControl = 2;
+	public float fullJumpImpulse;
+	public float shortJumpImpulse;
+	public float jumpSquatTime;
+	public float airControl;
 	public int playerNum;
 	public new GameObject camera;
 	public GameObject apple;
@@ -119,41 +119,53 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter( Collider obj ) {
-		// If we collided with a player
-		if (obj.gameObject.tag == "Player" ) {
-			// Try to determine who wins the "battle"
-			PlayerController p1 = obj.gameObject.GetComponentInChildren<PlayerController>();
-			PlayerController p2 = this;
-			if (p2.GetStateType () == typeof(PlayerHurt)) {
-				return;
-			}
-			if (p1.GetStateType () == typeof(PlayerHurt)) {
-				return;
-			}
-		
-			float p1score = p1.currSpeed.magnitude;
-			float p2score = p2.currSpeed.magnitude;
 
-			if (p1.GetStateType () == typeof(PlayerHurt)) {
-				p1score = 0;
-			}
-				
-			float wantedyaw = Quaternion.LookRotation(p2.transform.position-p1.transform.position).eulerAngles.y;
-			float realyaw = p1.transform.eulerAngles.y;
-			//Debug.Log (wantedyaw + " " + realyaw);
-			p1score -= Mathf.Abs (wantedyaw - realyaw)/10f;
-			p1score *= p1.character.weight;
+        // dead characters don't collide with other players
+        if (character.Alive)
+        {
+            // If we collided with a player
+            if (obj.gameObject.tag == "Player")
+            {
+                // Try to determine who wins the "battle"
+                PlayerController p1 = obj.gameObject.GetComponentInChildren<PlayerController>();
+                PlayerController p2 = this;
+                if (p2.GetStateType() == typeof(PlayerHurt))
+                {
+                    return;
+                }
+                if (p1.GetStateType() == typeof(PlayerHurt))
+                {
+                    return;
+                }
 
-			wantedyaw = Quaternion.LookRotation(p1.transform.position-p2.transform.position).eulerAngles.y;
-			realyaw = p2.transform.eulerAngles.y;
-			p2score -= Mathf.Abs (wantedyaw - realyaw)/10f;
-			p2score *= p2.character.weight;
-			if (p1score > p2score) {
-				SwitchState (new PlayerHurt ((p1.currSpeed + new Vector3 (0, p1.currSpeed.magnitude, 0))*(float)(p1.character.weight)));
-			} else {
-				p1.SwitchState (new PlayerHurt ((p2.currSpeed + new Vector3 (0, p2.currSpeed.magnitude, 0))*(float)(p2.character.weight)));
-			}
-		}
+                float p1score = p1.currSpeed.magnitude;
+                float p2score = p2.currSpeed.magnitude;
+
+                if (p1.GetStateType() == typeof(PlayerHurt))
+                {
+                    p1score = 0;
+                }
+
+                float wantedyaw = Quaternion.LookRotation(p2.transform.position - p1.transform.position).eulerAngles.y;
+                float realyaw = p1.transform.eulerAngles.y;
+                //Debug.Log (wantedyaw + " " + realyaw);
+                p1score -= Mathf.Abs(wantedyaw - realyaw) / 10f;
+                p1score *= p1.character.weight;
+
+                wantedyaw = Quaternion.LookRotation(p1.transform.position - p2.transform.position).eulerAngles.y;
+                realyaw = p2.transform.eulerAngles.y;
+                p2score -= Mathf.Abs(wantedyaw - realyaw) / 10f;
+                p2score *= p2.character.weight;
+                if (p1score > p2score)
+                {
+                    SwitchState(new PlayerHurt((p1.currSpeed + new Vector3(0, p1.currSpeed.magnitude, 0)) * (float)(p1.character.weight)));
+                }
+                else
+                {
+                    p1.SwitchState(new PlayerHurt((p2.currSpeed + new Vector3(0, p2.currSpeed.magnitude, 0)) * (float)(p2.character.weight)));
+                }
+            }
+        }
 	}
 
 	// This function is called automatically whenever something is within the trigger.
@@ -184,4 +196,15 @@ public class PlayerController : MonoBehaviour {
 	public Type GetStateType() {
 		return currentState.GetType();
 	}
+
+    public void InstaKill()
+    {
+        // mark the character dead
+        character.InstaKill();
+        // change their material to visually indicate
+
+        // that's it; this player will no longer collide with other players
+
+
+    }
 }
