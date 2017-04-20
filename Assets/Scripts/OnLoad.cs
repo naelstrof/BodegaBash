@@ -83,10 +83,11 @@ public class OnLoad : MonoBehaviour {
         else
         {
 			startTime = Time.time;
-			GameObject[] Spawns = GameObject.FindGameObjectsWithTag("Respawn");
+			ArrayList Spawns = new ArrayList (GameObject.FindGameObjectsWithTag("Respawn"));
 			for (int i = 0; i < Globals.playerCount; i++)
 			{
-				GameObject RandSpawn = Spawns[Random.Range(0, Spawns.Length)];
+				GameObject RandSpawn = (GameObject)Spawns[Random.Range(0, Spawns.Count)];
+				Spawns.Remove (RandSpawn);
 				GameObject player = UnityEngine.Object.Instantiate(Player, RandSpawn.transform.position, Quaternion.identity);
 				PlayerController PC = player.GetComponentInChildren<PlayerController>();
 
