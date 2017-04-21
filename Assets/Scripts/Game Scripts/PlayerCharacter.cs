@@ -138,11 +138,10 @@ public class PlayerCharacter
     public List<int> SpillItems(int _qty)
     {
         List<int> outItems = new List<int>();
-            
         for (int i = 0; i < _qty; i++)      // this is tricksy hobbit garbage code
             if (recentitems.Count > 0)      // don't worry about it
                 outItems.Add(RemoveItem(recentitems.Pop()));    // *inhale* so damn clever
-
+		
         return outItems;
     }
 

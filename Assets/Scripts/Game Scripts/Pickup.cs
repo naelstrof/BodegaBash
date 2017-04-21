@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour {
 	private GameObject Target;
 	private float SpeedUp;
 	private float cooldown = 2f;
+
 	// Use this for initialization
 	void Start () {
 		cooldown = 2f;

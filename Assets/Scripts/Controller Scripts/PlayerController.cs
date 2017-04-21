@@ -49,6 +49,35 @@ public class PlayerController : MonoBehaviour {
     private PlayerState newState;
 	private Vector3 lastPosition;
 
+
+	public GameObject freshProduce;
+	public GameObject beefJerky;
+	public GameObject driedFruit;
+	public GameObject painKillers;
+	public GameObject Bandages;
+	public GameObject FirstAidKit;
+	public GameObject Socks;
+	public GameObject Sweater;
+	public GameObject Jacket;
+	public GameObject WalkieTalkie;
+	public GameObject RadioSet;
+	public GameObject SatellitePhone;
+	public GameObject RechargableBatteries;
+	public GameObject Motor;
+	public GameObject Generator;
+	public GameObject Noodles;
+	public GameObject PoolTube;
+	public GameObject EmergencyRaft;
+	public GameObject FireBlanket;
+	public GameObject FireAxe;
+	public GameObject FireExtinguisher;
+	public GameObject MiniChemKit;
+	public GameObject MediumChemKit;
+	public GameObject JumboChemKit;
+	public GameObject KimWipes;
+	public GameObject SpillPad;
+	public GameObject ChemGone;
+
 	// Use this for initialization
 	void Start ()
     {
