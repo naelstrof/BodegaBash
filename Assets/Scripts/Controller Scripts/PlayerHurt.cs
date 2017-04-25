@@ -107,7 +107,7 @@ public class PlayerHurt : PlayerState {
 					break;
 				}
 				Rigidbody r = item.AddComponent <Rigidbody>();
-				SphereCollider s = item.AddComponent <SphereCollider>();
+				item.AddComponent <SphereCollider>();
 				r.velocity = new Vector3 (Random.Range (-20f, 20f), 10f, Random.Range (-20f, 20f));
 			}
 		}

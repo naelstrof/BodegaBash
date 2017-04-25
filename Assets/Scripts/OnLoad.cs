@@ -77,7 +77,7 @@ public class OnLoad : MonoBehaviour {
             for (int i = 0; i < Globals.playerCount; i++)
             {
                 Globals.playerChars[i] = new PlayerCharacter(CharacterTable.Defs["JOE DUDE"]);
-                Globals.playerControllers[i] = new PlayerController();
+                //Globals.playerControllers[i] = new PlayerController();
             }
         }
         else

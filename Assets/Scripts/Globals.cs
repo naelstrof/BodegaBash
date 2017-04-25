@@ -15,8 +15,8 @@ public static class Globals
     public static PlayerController[] playerControllers;
     public static char Scenario = ' ';  // 'T' for tsunami  // 'E' for earthquake   // 'C' for chemical spill
     public static bool Shopping = false;
-    public static int shoppingTimer = 120;
-    public static int minigameTimer = 120;
+    public static int shoppingTimer = 60;
+    public static int minigameTimer = 70;
 
     // ITEM CATEGORIES
     public const string CAT_FOOD = "food";              // food and water

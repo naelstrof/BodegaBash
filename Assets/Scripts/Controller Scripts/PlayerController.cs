@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour {
 			// This is how long the game will check for a wall jump
 			wallJumping = 20f/60f;
 			// This is the wall jump cooldown, after failing a walljump.
-			failWallJumpTimer = 40f / 60f;
+			failWallJumpTimer = 20f / 60f;
 		}
 		if (wallJumping > 0) {
 			wallJumping -= Time.deltaTime;

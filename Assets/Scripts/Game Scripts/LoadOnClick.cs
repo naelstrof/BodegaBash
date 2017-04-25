@@ -13,8 +13,11 @@ public class LoadOnClick : MonoBehaviour {
                 Globals.BBStartup = false;
                 SceneManager.LoadScene(sceneIndex);
                 break;
-            case 789:
-                Globals.Shopping = false;
+		case 789:
+			Globals.Shopping = false;
+			string scenario = "TE";
+			string rsc = scenario [Random.Range (0, scenario.Length)].ToString();
+			SetScenario (rsc);
                 switch (Globals.Scenario)
                 {
                     case 'T':
@@ -32,6 +35,11 @@ public class LoadOnClick : MonoBehaviour {
                 SceneManager.LoadScene(sceneIndex);
                 break;
         }
+	}
+
+	public void LoadRandomMap() {
+		int randMap = Random.Range (3, 6);
+		SceneManager.LoadScene(randMap);
 	}
 
     public void SetScenario(string disaster)
