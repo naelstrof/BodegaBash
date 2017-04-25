@@ -49,6 +49,35 @@ public class PlayerController : MonoBehaviour {
     private PlayerState newState;
 	private Vector3 lastPosition;
 
+
+	public GameObject freshProduce;
+	public GameObject beefJerky;
+	public GameObject driedFruit;
+	public GameObject painKillers;
+	public GameObject Bandages;
+	public GameObject FirstAidKit;
+	public GameObject Socks;
+	public GameObject Sweater;
+	public GameObject Jacket;
+	public GameObject WalkieTalkie;
+	public GameObject RadioSet;
+	public GameObject SatellitePhone;
+	public GameObject RechargableBatteries;
+	public GameObject Motor;
+	public GameObject Generator;
+	public GameObject Noodles;
+	public GameObject PoolTube;
+	public GameObject EmergencyRaft;
+	public GameObject FireBlanket;
+	public GameObject FireAxe;
+	public GameObject FireExtinguisher;
+	public GameObject MiniChemKit;
+	public GameObject MediumChemKit;
+	public GameObject JumboChemKit;
+	public GameObject KimWipes;
+	public GameObject SpillPad;
+	public GameObject ChemGone;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -101,7 +130,7 @@ public class PlayerController : MonoBehaviour {
 			// This is how long the game will check for a wall jump
 			wallJumping = 20f/60f;
 			// This is the wall jump cooldown, after failing a walljump.
-			failWallJumpTimer = 40f / 60f;
+			failWallJumpTimer = 20f / 60f;
 		}
 		if (wallJumping > 0) {
 			wallJumping -= Time.deltaTime;

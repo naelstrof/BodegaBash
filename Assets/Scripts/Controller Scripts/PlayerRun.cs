@@ -29,7 +29,10 @@ public class PlayerRun : PlayerState
 		if (run <= 0 && back <= 0) {
 			player.SwitchState (new PlayerIdle());
 		}
-		if (back + run == 2) {
+		Debug.Log ("Run" + run);
+		Debug.Log ("Back" + back);
+		Debug.Log ("Total" + (run+back));
+		if (back + run >= 1.8) {
 			if (player.speed != 0) {
 				if (player.speed > 0) {
 					player.speed -= player.accel;

@@ -15,7 +15,7 @@ public class TsunamiScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         // move the water plane
-        transform.Translate(Vector3.back * 0.15f, Space.World); // changed coeff from 0.25f
+		transform.Translate(Vector3.forward * 0.15f, Space.World); // changed coeff from 0.25f
     }
 
 	void OnTriggerEnter(Collider c)
